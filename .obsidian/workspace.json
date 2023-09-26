@@ -1,0 +1,197 @@
+{
+  "main": {
+    "id": "18c45cc39136be1b",
+    "type": "split",
+    "children": [
+      {
+        "id": "c4a07cbaaddd8daf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7806c4255284f4b2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Protocolli/IP.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "60ce8f33b9d6e3c8",
+    "type": "split",
+    "children": [
+      {
+        "id": "a7b08ac8e5196e8e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4f1395df03ad574f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "342589dc19448cdd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5085b1eb318d4a0f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "c44e6fb28657bd0b",
+            "type": "leaf",
+            "state": {
+              "type": "tagfolder-view",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 257
+  },
+  "right": {
+    "id": "014b55e7617aa5cc",
+    "type": "split",
+    "children": [
+      {
+        "id": "4bad94141dff2abf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "244438b15b82e96d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Protocolli/IP.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c66aabdb5d992d2f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Protocolli/IP.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2810fc26ad3c7ee0",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "a17e3be5f7e2104d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Protocolli/IP.md"
+              }
+            }
+          },
+          {
+            "id": "303e48ba32203119",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 699.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-map-view:Open map view": false
+    }
+  },
+  "active": "7806c4255284f4b2",
+  "lastOpenFiles": [
+    "Reti/Porte.md",
+    "Reti/Routing.md",
+    "Protocolli/IP.md",
+    "Reti/MAC.md",
+    "Reti/Livelli OSI.md",
+    "Reti/IPS.md",
+    "Protocolli/3 Way Handshake.md",
+    "Reti/DNS.md",
+    "Reti/Firewall.md",
+    "Reti/IDS.md",
+    "Hypervisor.md",
+    "diamond-model.pdf",
+    "SOC/Antivirus.md",
+    "SOC/Threat Intel.md",
+    "SOC/SOC.md",
+    "SOC/SIEM.md",
+    "SOC/quizSoc.md",
+    "SOC/Qradar.md",
+    "SOC/Packet-Inspection.md",
+    "SOC/Incident Response.md",
+    "Reti/Untitled.md",
+    "Protocolli/TCP.md",
+    "Attacchi/Vulnerabilità.md",
+    "Database Directory.md",
+    "Reti/Switch.md",
+    "SOC/Honeypots.md",
+    "Protocolli/UDP.md"
+  ]
+}

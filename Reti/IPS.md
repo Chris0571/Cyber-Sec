@@ -1,0 +1,3 @@
+Un Intrusion Prevention System è un dispositivo posto in line nella rete, il suo compito è quello di identificare intrusioni ed agire bloccandole.
+Un IPS può eseguire alcune azioni come mandare un allarme, eliminare pacchetti malevoli, resettare le connessioni e/o bloccare il traffico da un indirizzo IP attaccante.
+Sono basati su una lista di controllo degli accessi simile a quella utilizzata da un firewall, con la differenza che quest'ultimo lavora a livello di trasporto e di rete su porte e indirizzi IP mentre questa tecnologia lavora a livello applicativo su programmi/servizi e utenti.

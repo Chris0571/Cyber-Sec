@@ -1,0 +1,1 @@
+Il protocollo _Address Resolution Protocol_ è un protocollo di rete utilizzato per convertire gli indirizzi IP in indirizzi MAC.
