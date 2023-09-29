@@ -1,0 +1,1 @@
+MITM è una tipologia di attacco dove un malintenzionato si infiltra in una connessione, riuscendo a sniffare o anche manipolare il payl

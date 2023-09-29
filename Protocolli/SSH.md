@@ -1,4 +1,4 @@
-##### *__Secure Shell__* è un protocollo che fornisce l'interfaccia di #shell sicura da remoto 
+#### *__Secure Shell__* è un protocollo che fornisce l'interfaccia di #shell sicura da remoto 
 
 Ecco alcune delle caratteristiche di SSH:
 

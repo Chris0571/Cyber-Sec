@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Criptografia/3DES.md",
+                "file": "Attacchi/Man in the Middle.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Criptografia/3DES.md",
+                "file": "Attacchi/Man in the Middle.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Criptografia/3DES.md",
+                "file": "Attacchi/Man in the Middle.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Criptografia/3DES.md"
+                "file": "Attacchi/Man in the Middle.md"
               }
             }
           },
@@ -174,32 +174,32 @@
   },
   "active": "a9facd1c71303c2c",
   "lastOpenFiles": [
-    "Criptografia/3DES.md",
-    "Prova.md",
-    "Linux/UNIX.md",
-    "Protocolli/IP.md",
-    "Reti/Porte.md",
+    "Attacchi/Denial of Service.md",
+    "Attacchi/Attacchi.md",
     "Reti/Routing.md",
-    "Reti/MAC.md",
-    "Reti/Livelli OSI.md",
-    "Reti/IPS.md",
-    "Protocolli/3 Way Handshake.md",
-    "Reti/DNS.md",
-    "Reti/Firewall.md",
     "Reti/IDS.md",
-    "Hypervisor.md",
-    "diamond-model.pdf",
-    "SOC/Antivirus.md",
-    "SOC/Threat Intel.md",
-    "SOC/SOC.md",
-    "SOC/SIEM.md",
-    "SOC/quizSoc.md",
-    "SOC/Qradar.md",
-    "SOC/Packet-Inspection.md",
-    "SOC/Incident Response.md",
-    "Reti/Untitled.md",
+    "Reti/IPS.md",
+    "Protocolli/HTTP.md",
+    "Protocolli/LDAP.md",
+    "Protocolli/SNMP.md",
     "Protocolli/TCP.md",
-    "Attacchi/Vulnerabilità.md",
-    "Database Directory.md"
+    "Reti/VPN.md",
+    "Reti/Switch.md",
+    "Reti/Subnetting.md",
+    "Reti/Porte.md",
+    "Reti/MAC.md",
+    "Reti/Firewall.md",
+    "Reti/DNS.md",
+    "Protocolli/SSH.md",
+    "Protocolli/UDP.md",
+    "Protocolli/NTP.md",
+    "Protocolli/IP.md",
+    "Protocolli/HTTPs.md",
+    "Protocolli/DHCP.md",
+    "Protocolli/FTP.md",
+    "Protocolli/CLDAP.md",
+    "Protocolli/ARP.md",
+    "Criptografia/3DES.md",
+    "diamond-model.pdf"
   ]
 }
