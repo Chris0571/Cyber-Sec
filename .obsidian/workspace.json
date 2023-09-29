@@ -8,13 +8,11 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a9facd1c71303c2c",
+            "id": "a42131256d543562",
             "type": "leaf",
             "state": {
-              "type": "pdf",
-              "state": {
-                "file": "diamond-model.pdf"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -91,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "diamond-model.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "diamond-model.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -130,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "diamond-model.pdf"
-              }
+              "state": {}
             }
           },
           {
@@ -170,8 +164,9 @@
       "obsidian-map-view:Open map view": false
     }
   },
-  "active": "a9facd1c71303c2c",
+  "active": "a42131256d543562",
   "lastOpenFiles": [
+    "diamond-model.pdf",
     "Attacchi/Attacchi.md",
     "Attacchi/Man in the Browser.md",
     "Attacchi/Man in the Middle.md",
@@ -196,8 +191,6 @@
     "Protocolli/IP.md",
     "Protocolli/HTTPs.md",
     "Protocolli/DHCP.md",
-    "Protocolli/FTP.md",
-    "Protocolli/CLDAP.md",
-    "diamond-model.pdf"
+    "Protocolli/FTP.md"
   ]
 }
