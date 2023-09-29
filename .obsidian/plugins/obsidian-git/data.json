@@ -1,8 +1,8 @@
 {
   "commitMessage": "vault backup: {{date}} , from: {{hostname}} , of: {{files}}",
   "commitDateFormat": "YYYY-MM-DD HH:mm:ss",
-  "autoSaveInterval": 3,
-  "autoPushInterval": 0,
+  "autoSaveInterval": 10,
+  "autoPushInterval": 30,
   "autoPullInterval": 0,
   "autoPullOnBoot": false,
   "disablePush": false,
@@ -17,7 +17,7 @@
   "treeStructure": false,
   "refreshSourceControl": true,
   "basePath": "\\home\\mobaxterm\\Desktop\\Cyber-Security",
-  "differentIntervalCommitAndPush": false,
+  "differentIntervalCommitAndPush": true,
   "changedFilesInStatusBar": false,
   "showedMobileNotice": true,
   "refreshSourceControlTimer": 7000,
@@ -51,5 +51,5 @@
     "lastShownAuthorDisplay": "initials",
     "lastShownDateTimeFormatOptions": "date"
   },
-  "autoCommitMessage": "vault backup: {{date}}"
+  "autoCommitMessage": "vault automatic backup: {{date}}, from: {{hostname}}, numFiles: {{numFiles}}"
 }

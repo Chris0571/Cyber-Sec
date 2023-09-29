@@ -8,30 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c864ad41c3a364e0",
-            "type": "leaf",
-            "state": {
-              "type": "diff-view",
-              "state": {
-                "file": ".obsidian/plugins/obsidian-git/data.json",
-                "staged": false
-              }
-            }
-          },
-          {
-            "id": "158d3e37248b807d",
+            "id": "a9facd1c71303c2c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Prova.md",
+                "file": "Criptografia/3DES.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -105,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Prova.md",
+                "file": "Criptografia/3DES.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Prova.md",
+                "file": "Criptografia/3DES.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Prova.md"
+                "file": "Criptografia/3DES.md"
               }
             }
           },
@@ -184,10 +172,11 @@
       "obsidian-map-view:Open map view": false
     }
   },
-  "active": "158d3e37248b807d",
+  "active": "a9facd1c71303c2c",
   "lastOpenFiles": [
-    "Linux/UNIX.md",
+    "Criptografia/3DES.md",
     "Prova.md",
+    "Linux/UNIX.md",
     "Protocolli/IP.md",
     "Reti/Porte.md",
     "Reti/Routing.md",
@@ -211,7 +200,6 @@
     "Reti/Untitled.md",
     "Protocolli/TCP.md",
     "Attacchi/Vulnerabilità.md",
-    "Database Directory.md",
-    "Reti/Switch.md"
+    "Database Directory.md"
   ]
 }
