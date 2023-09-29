@@ -11,8 +11,11 @@
             "id": "c864ad41c3a364e0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "diff-view",
+              "state": {
+                "file": ".obsidian/plugins/obsidian-git/data.json",
+                "staged": false
+              }
             }
           }
         ]
@@ -136,14 +139,21 @@
               "type": "graph",
               "state": {}
             }
+          },
+          {
+            "id": "a326b6257ed1922f",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 699.5,
-    "collapsed": true
+    "width": 699.5
   },
   "left-ribbon": {
     "hiddenItems": {
