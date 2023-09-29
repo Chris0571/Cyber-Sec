@@ -23,7 +23,7 @@ Esistono vari tipi di attacchi che mirano ad obiettivi diversi:
 - #URL-Hijacking
 	molto utilizzato nei phishing, prendere un dominio con un errore ortografico o molto simile ad un'altro già esistente
 - #MAC-Spoofing 
-	è un sistema dove si inpersonifica un'altro MAC per garantirsi l'accesso 
+	è un sistema dove si impersonifica un'altro MAC per garantirsi l'accesso 
 - #IP-Spoofing
 	fingersi qualcun'altro utilizzando il suo IP
 - #Downgrade

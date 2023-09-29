@@ -11,11 +11,9 @@
             "id": "a9facd1c71303c2c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Attacchi/Man in the Middle.md",
-                "mode": "source",
-                "source": false
+                "file": "diamond-model.pdf"
               }
             }
           }
@@ -93,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Attacchi/Man in the Middle.md",
+                "file": "diamond-model.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +108,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Attacchi/Man in the Middle.md",
+                "file": "diamond-model.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +131,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Attacchi/Man in the Middle.md"
+                "file": "diamond-model.pdf"
               }
             }
           },
@@ -174,8 +172,10 @@
   },
   "active": "a9facd1c71303c2c",
   "lastOpenFiles": [
-    "Attacchi/Denial of Service.md",
     "Attacchi/Attacchi.md",
+    "Attacchi/Man in the Browser.md",
+    "Attacchi/Man in the Middle.md",
+    "Attacchi/Denial of Service.md",
     "Reti/Routing.md",
     "Reti/IDS.md",
     "Reti/IPS.md",
@@ -198,8 +198,6 @@
     "Protocolli/DHCP.md",
     "Protocolli/FTP.md",
     "Protocolli/CLDAP.md",
-    "Protocolli/ARP.md",
-    "Criptografia/3DES.md",
     "diamond-model.pdf"
   ]
 }

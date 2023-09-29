@@ -1,1 +1,2 @@
-MITM è una tipologia di attacco dove un malintenzionato si infiltra in una connessione, riuscendo a sniffare o anche manipolare il payl
+MITM è una tipologia di attacco dove un malintenzionato si infiltra in una connessione, riuscendo a sniffare o anche manipolare il payload dei pacchetti intercettati, senza che client e server se ne accorgano.
+C'e anche la variante [[Man in the Browser]]

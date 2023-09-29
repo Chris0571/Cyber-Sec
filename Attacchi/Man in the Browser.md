@@ -1,0 +1,1 @@
+Una variante del [[Man in the Middle]] dove l'attaccante riesce a impossessarsi del browser della vittima senza che questa se ne accorga, può avvenire se si viene derubati del token di sessione per esempio
