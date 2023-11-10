@@ -1,0 +1,1 @@
+I #virtual-environment in python sono degli spazi di lavoro costruiti per testare un progetto che richiede determinate dipendenze.

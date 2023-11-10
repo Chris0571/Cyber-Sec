@@ -17,8 +17,8 @@ settings:
     id: common-fonts
     title: Typesets
     title.de: Schriftsätze
-    description: Standard (1), Handwritten (2), Poetry (3), Dashboard (4)
-    description.de: Standard (1), Handschrift (2), Poesie (3), Startseite (4)
+    description: Standard (1), Modern (2), Poetry (3), Dashboard (4)
+    description.de: Standard (1), Modern (2), Poesie (3), Startseite (4)
     type: heading
     level: 2
     collapsed: true
@@ -70,24 +70,24 @@ settings:
     max: 24
     step: 1
   -
-    id: font-handwritten
-    title: 2 - Handwritten
-    title.de: 2 - Handschrift
+    id: font-modern
+    title: 2 - Modern
+    title.de: 2 - Modern
     type: heading
     level: 3
     collapsed: true
   - 
-    id: handwritten-font-h
+    id: modern-font-h
     title: Header Font
     title.de: Überschriften
     type: variable-text
-    default: 'Roddy-Bold, cursive, Mumsies, Helvetica'
+    default: 'Optima-ExtraBlack, HelveticaNeue-Bold, GillSans-Light'
   - 
-    id: handwritten-font-c
+    id: modern-font-c
     title: Character Font
     title.de: Charakterschrift
     type: variable-text
-    default: 'Quikhand, cursive, Mumsies, Helvetica'
+    default: 'Optima-Regular, HelveticaNeue-Light, GillSans-Bold'
   -
     id: custom-fsz-2
     title: Custom Font size
@@ -170,7 +170,7 @@ settings:
     id: heading-spacing
     title: Spacing
     title.de: Anordnung
-    description: change spacing bw headers, characters, linebreaks
+    description: change spacing between headers, characters, lines
     description.de: Ändere den Abstand von Überschriften, Charakterschrift, Zeilenumbruch
     type: heading
     level: 2
@@ -199,33 +199,42 @@ settings:
             value: align-b
   -
     id: break-space
-    title: Newline
-    title.de: Zeilenumbruch
+    title: Line
+    title.de: Zeilen
     type: heading
     level: 3
     collapsed: true
   -
     id: custom-max-line-width
-    title: Linebreak - custom width
+    title: Textbody - Line width
     description: first, activate "readable line width" in Preferences-Editor
-    title.de: Umbruch - eigene Zeilenlänge
+    title.de: Textkörper - Notizbreite
     description.de: aktiviere zuerst "lesbare Zeilenlänge" in Einstellungen-Editor
     type: variable-number-slider
     format: px
-    default: 700
+    default: 750
     min: 500
-    max: 1400
+    max: 1150
     step: 50
-  -
-    id: deco-scale
-    title: Linebreak - Decoration size
-    title.de: Umbruch - Dekorationen anpassen
-    description: (wave-a - wave-f)
+  - 
+    id: indent-l
+    title: Indent tabs
+    title.de: Zeileneinzug
+    description: indent paragraphs 
+    description.de: Zeileneinzug Paragrafen
     type: variable-number-slider
-    default: 0.6
-    min: 0.1
-    max: 1.2
-    step: 0.1
+    format: em
+    default: 4
+    min: 2
+    max: 10
+    step: 1
+  -
+    id: indent-p
+    title: Indent paragraphs
+    title.de: Paragraphen einrücken
+    description: all paragraphs (inherits from - Indent tabs)
+    description.de: alle Paragrafen (übernimmt - Zeileneinzug Paragrafen)
+    type: class-toggle
   -
     id: prg-break
     title: Linebreak - empty
@@ -233,6 +242,45 @@ settings:
     title.de: Umbruch - leer
     description.de: ignoriere leere Umbrüche
     type: class-toggle
+  -
+    id: hide-hr
+    title: Hide Hr Lines - pdf
+    description: applies to all horizontal lines
+    title.de: Verstecke Hr Linien - pdf
+    description.de: aktiv auf alle horizontale linien 
+    type: class-toggle
+  -
+    id: add-pdf-pages
+    title: "Page counter"
+    description: '-  default no counter,  •  break-after, without counter,  ↓  counter on bottom,  ↑  counter on top'
+    title.de: "Seitenzähler"
+    description.de:  '-  Standard, kein Zähler,  •  Umbruch Unten, ohne Zähler,  ↓  Zähler Unten,  ↑  Zähler Oben'
+    type: class-select
+    allowEmpty: false
+    default: pdf-counter-2
+    options:
+        - 
+            label: "-"
+            value: pdf-counter-1
+        - 
+            label: "•"
+            value: pdf-counter-2
+        - 
+            label: ↓
+            value: pdf-counter-3
+        -
+            label: ↑
+            value: pdf-counter-4
+  -  
+    id: max-width-tabs
+    title: Tabs - width
+    title.de: Reiter - Breite
+    type: variable-number-slider
+    format: px
+    default: 120
+    min: 60
+    max: 200
+    step: 20
   -  
     id: header-space
     title: Headers
@@ -255,12 +303,12 @@ settings:
     id: custom-margin-below-header
     title: Custom Margin Below Header
     title.de: Überschriften Abstand-Unten
-    description: (8)
+    description: (14)
     type: variable-number-slider
     format: px
     default: 0
     min: 0
-    max: 14
+    max: 30
     step: 2
   -
     id: large-h1
@@ -287,6 +335,18 @@ settings:
     max: 4
     step: 0.4
   -
+    id: initial-sz
+    title: Initial size
+    title.de: Initiale Größe
+    description: resize first letter
+    description.de: Größenveränderung
+    type: variable-number-slider
+    format: px
+    default: 110
+    min: 110
+    max: 130
+    step: 5
+  -
     id: center-header
     title: Centered headers
     description: center all headers
@@ -302,6 +362,22 @@ settings:
     type: heading
     level: 2
     collapsed: true
+  - 
+    id: font-monospace
+    title: Monospace Font
+    description: for yaml headers, tables, codeblocks
+    title.de: Konstantschrift
+    description.de: für Yaml-Kopfzeilen, Tabellen, Befehlszeilen
+    type: variable-text
+    default: '"Source Code Pro", monospace'
+  - 
+    id: mermaid-font
+    title: Mermaid Font
+    description: for diagrams
+    title.de: Mermaid Schrift
+    description.de: für Diagramme
+    type: variable-text
+    default: 'Roboto, Helvetica, Arial, sans-serif, "Microsoft YaHei Light"'
   -
     id: special-fonts
     title: Special Header Fonts
@@ -331,29 +407,6 @@ settings:
     type: variable-text
     default: 'AbadiMT-CondensedLight, Helvetica, "Century Gothic", Roboto, Arial, sans-serif'
   -
-    id: font-mono
-    title: Diagrams - Monospaced
-    title.de: Diagramme - Konstantschrift
-    type: heading
-    level: 3
-    collapsed: true
-  - 
-    id: font-monospace
-    title: Monospace Font
-    description: for yaml headers, tables, codeblocks
-    title.de: Konstantschrift
-    description.de: für Yaml-Kopfzeilen, Tabellen, Befehlszeilen
-    type: variable-text
-    default: '"Source Code Pro", monospace'
-  - 
-    id: mermaid-font
-    title: Mermaid Font
-    description: for diagrams
-    title.de: Mermaid Schrift
-    description.de: für Diagramme
-    type: variable-text
-    default: 'Roboto, Helvetica, Arial, sans-serif, "Microsoft YaHei Light"'
-  -
     id: img-options
     title: ✦ Pictures
     description: manage pictures
@@ -366,8 +419,8 @@ settings:
     id: heading-image-frames
     title: Picture frames
     title.de: Bilderrahmen
-    description: 4 Frames
-    description.de: 4 Bilderrahmen
+    description: 5 Picture frames
+    description.de: 5 Bilderrahmen
     type: heading
     level: 2
     collapsed: true
@@ -525,8 +578,8 @@ settings:
     id: zoom-imgs
     title: Zoom Pictures
     title.de: Vergrößerung
-    description: zoom pictures, diagrams and gif
-    description.de: Vergrößere Bilder, Diagramme, Gif
+    description: zoom pictures, diagrams, gif and decorations
+    description.de: Vergrößere Bilder, Diagramme, Gif, Dekorationen
     type: heading
     level: 2
     collapsed: true
@@ -546,19 +599,63 @@ settings:
     type: class-toggle
   -
     id: show-gifs
-    title: Gif animation 
-    description: zoom and animate gifs
+    title: Gif Pictures 
+    description: zoom and animate gifs (Performance option)
     title.de: Gif Bilder
-    description.de: Vergrößere und animierte gif Bilder
+    description.de: Vergrößere und animiere gifs (senkt Leistung)
     type: class-toggle
   -
-    id: pictwall-opt
+    id: deco-scale
+    title: Decoration sizes
+    title.de: Dekorationen anpassen
+    description: (wave-a - wave-f)
+    type: variable-number-slider
+    default: 0.6
+    min: 0.1
+    max: 1.2
+    step: 0.1
+  -
+    id: pict-arrangm
     title: Arrange Pictures
     title.de: Arrangiere Bilder
     description: arrange your pictures - vertically and horizontally 
     description.de: arrangiere Bilder - vertikal und horizontal
     type: heading
     level: 2
+    collapsed: true
+  -
+    id: banner-opt
+    title: Banners
+    title.de: Banner
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: banner-ah
+    title: Resize banner-a (Top) 
+    title.de: Größe Banner-a (Oben)
+    type: variable-number-slider
+    format: px
+    default: 240
+    min: 140
+    max: 500
+    step: 20
+  -
+    id: banner-bh
+    title: Resize banner-b (Bottom)
+    title.de: Größe Banner-b (Unten)
+    type: variable-number-slider
+    format: px
+    default: 240
+    min: 140
+    max: 500
+    step: 20
+  -
+    id: pictwall-opt
+    title: Picturewall
+    title.de: Bilderwand
+    type: heading
+    level: 3
     collapsed: true
   -
     id: pictwall-height
@@ -581,26 +678,6 @@ settings:
     max: 3000
     step: 40
   -
-    id: banner-ah
-    title: Resize banner-a (Top) 
-    title.de: Größe Banner-a (Oben)
-    type: variable-number-slider
-    format: px
-    default: 240
-    min: 140
-    max: 500
-    step: 20
-  -
-    id: banner-bh
-    title: Resize banner-b (Bottom)
-    title.de: Größe Banner-b (Unten)
-    type: variable-number-slider
-    format: px
-    default: 240
-    min: 140
-    max: 500
-    step: 20
-  -
     id: heading-profile-pic
     title: Profile picture
     title.de: Profilbild
@@ -611,16 +688,16 @@ settings:
     collapsed: true
   -
     title: Vault Profile
-    description: Square (🁢), Banner (🀰), Standard (𝑵 Normal), small (𝑵 Minimal)
+    description: Square (■), Banner (🀰), Standard (𝑵 Normal), small (𝑵 Minimal)
     title.de: Vault Profil
-    description.de: Quadrat (🁢), Banner (🀰), Standard (𝑵 Normal), klein (𝑵 Minimal)
+    description.de: Quadrat (■), Banner (🀰), Standard (𝑵 Normal), klein (𝑵 Minimal)
     id: vault-name-s
     type: class-select
     allowEmpty: false
     default: vault-name-f
     options:
         -
-            label: 🁢
+            label: ■
             value: vault-name-a
         -
             label: 🀰
@@ -668,7 +745,7 @@ settings:
   -
     id: custom-colors-scheme
     title: Custom Theme
-    description: your own color scheme
+    description: Custom color scheme
     title.de: Eigenes Thema
     description.de: Wähle eigenes Farbschema
     type: heading
@@ -791,8 +868,8 @@ settings:
     default-dark: '#4A6CB0A1'
   -
     id: interface-col-scheme
-    title: Base Colors
-    title.de: Hauptfarben
+    title: Interface colors
+    title.de: Oberflächenfarbe
     type: heading
     level: 3
     collapsed: true
@@ -825,19 +902,12 @@ settings:
     format: hex
     default-light: '#46453D'
     default-dark: '#4B4D45'
-  -
-    id: interface-col-sec
-    title: Secondary Colors
-    title.de: Nebenfarben
-    type: heading
-    level: 3
-    collapsed: true
   - 
     id: def-red
     title: Default red
     description: for tables, text highlight types
     title.de: Standard Rot
-    description.de: für Tabellen, Callout, Textmarkierungen
+    description.de: für Tabellen, Textmarkierungen
     type: variable-themed-color
     format: rgb
     opacity: true
@@ -848,7 +918,7 @@ settings:
     title: Default green
     description: for tables, text highlight types
     title.de: Standard Grün
-    description.de: für Tabellen, Callout, Textmarkierungen
+    description.de: für Tabellen, Textmarkierungen
     type: variable-themed-color
     format: rgb
     opacity: true
@@ -859,7 +929,7 @@ settings:
     title: Default blue
     description: for tables, text highlight types
     title.de: Standard Blau
-    description.de: für Tabellen, Callout, Textmarkierungen
+    description.de: für Tabellen, Textmarkierungen
     type: variable-themed-color
     format: rgb
     opacity: true
@@ -870,7 +940,7 @@ settings:
     title: Default yellow
     description: for tables, text highlight types
     title.de: Standard Gelb
-    description.de: für Tabellen, Callout, Textmarkierungen
+    description.de: für Tabellen, Textmarkierungen
     type: variable-themed-color
     format: rgb
     opacity: true
@@ -922,7 +992,7 @@ settings:
     default-dark: '#CA6404'
   -
     id: prop-col
-    title: 'Text: Text-tag color - custom'
+    title: 'Text-tag color - custom'
     description: for Text-tags
     title.de: Eigene 'Schlüsselworte'-Farbe 
     description.de: für 'Schlüsselworte'
@@ -931,6 +1001,103 @@ settings:
     format: rgb
     default-light: '#0080ff'
     default-dark: '#FFAA1A'
+  -
+    id: folder-colors
+    title: Folder Colors
+    title.de: Ordnerfarben
+    type: heading
+    level: 3
+    collapsed: true
+  -
+    id: Fold1
+    title: Folder 1
+    title.de: Ordner 1
+    type: variable-themed-color
+    format: hex
+    opacity: false
+    default-light: '#7e91e4'
+    default-dark: '#6575b9' 
+  -
+    id: Fold2
+    title: Folder 2
+    title.de: Ordner 2
+    type: variable-themed-color
+    format: hex
+    opacity: false
+    default-light: '#77c3d8'
+    default-dark: '#65a6b8' 
+  -
+    id: Fold3
+    title: Folder 3
+    title.de: Ordner 3
+    type: variable-themed-color
+    format: hex
+    opacity: false
+    default-light: '#69bc67'
+    default-dark: '#549953' 
+  -
+    id: Fold4
+    title: Folder 4
+    title.de: Ordner 4
+    type: variable-themed-color
+    format: hex
+    opacity: false
+    default-light: '#c2d000'
+    default-dark: '#a1ac00' 
+  -
+    id: Fold5
+    title: Folder 5
+    title.de: Ordner 5
+    type: variable-themed-color
+    format: hex
+    opacity: false
+    default-light: '#d7bb00'
+    default-dark: '#b19a00' 
+  -
+    id: Fold6
+    title: Folder 6
+    title.de: Ordner 6
+    type: variable-themed-color
+    format: hex
+    opacity: false
+    default-light: '#e1ab59'
+    default-dark: '#c1924c' 
+  -
+    id: Fold7
+    title: Folder 7
+    title.de: Ordner 7
+    type: variable-themed-color
+    format: hex
+    opacity: false
+    default-light: '#ce7172'
+    default-dark: '#a75c5d' 
+  -
+    id: Fold8
+    title: Folder 8
+    title.de: Ordner 8
+    type: variable-themed-color
+    format: hex
+    opacity: false
+    default-light: '#c0699e'
+    default-dark: '#9c5581' 
+  -
+    id: Fold9
+    title: Folder 9
+    title.de: Ordner 9
+    type: variable-themed-color
+    format: hex
+    opacity: false
+    default-light: '#9e67bc'
+    default-dark: '#82559b' 
+  -
+    id: Fold0
+    title: Folder 0
+    title.de: Ordner 0
+    type: variable-themed-color
+    format: hex
+    opacity: false
+    default-light: '#acacac'
+    default-dark: '#858585' 
   -
     id: theme-colors-scheme
     title: Theme
@@ -971,6 +1138,8 @@ settings:
   -
     title: Dim Pictures
     title.de: Bilder abdunkeln
+    description: Reduce strong white (dark themes)
+    description.de: Verringere starkes Weiß (Dunkle Themen)
     id: dim-pictures
     type: class-select
     allowEmpty: false
@@ -996,7 +1165,7 @@ settings:
     title: Extra colors
     description: for simple image frames, simple delimiter
     title.de: Zusätzliche Farben
-    description.de: für einfache Bilderrahmen, Trenner, Initialien, Callouts, Memos, Tabellen, Markierungen
+    description.de: für einfache Bilderrahmen, Trenner, Initialien
     type: heading
     level: 2
     collapsed: true
@@ -1056,6 +1225,7 @@ settings:
     title.de: Seitenleiste, Links
     description.de: Wiederherstellung Seitenleiste
     type: class-toggle
+    default: true
   -
     id: show-title-name
     title: Note title
@@ -1099,6 +1269,20 @@ settings:
     description.de: Wiederherstellung normale Stapelansicht
     type: class-toggle
   -
+    id: slim-bars
+    title: Slim bars
+    description: restore default bar height
+    title.de: Schmale Leisten
+    description.de: Wiederherstellung normale Leisten
+    type: class-toggle
+  -
+    id: grid-mobile-tb
+    title: Grid toolbar (phone)
+    description: restore default toolbar
+    title.de: Raster Werkzeugleiste (Tel)
+    description.de: Wiederherstellung normale Werkzeugleiste
+    type: class-toggle
+  -
     id: fade-op-b
     title: Text body
     title.de: Textkörper
@@ -1122,9 +1306,14 @@ settings:
   -
     id: show-ls-marker
     title: List counter marker
-    description: restore counter marker (list)
+    description: restore list counter marker
     title.de: Listen Aufzählzeichen
     description.de: Wiederherstellung Aufzählzeichen
+    type: class-toggle
+  -
+    id: footnote-g
+    title: Footnotes - gutter
+    title.de: Fußnoten (Seitenspalte)
     type: class-toggle
   -
     id: code-utils
@@ -1134,11 +1323,11 @@ settings:
     description.de: Hervorhebung aktive Zeile
     type: class-toggle
   -
-    id: indent-p
-    title: indent paragraphs
-    title.de: Paragraphen einrücken
-    description: applies to all paragraphs 
-    description.de: wirksam auf alle Paragrafen 
+    id: writer-mode
+    title: Writer mode (edit mode) 
+    description: fade inactive Lines
+    title.de: Schriftsteller Modus (Schreibmodus)
+    description.de: Verschleiere inaktive Zeilen
     type: class-toggle
   -
     id: show-prop
@@ -1177,9 +1366,9 @@ settings:
   -
     id: slides-s
     title: Slide - compact
-    description: restore smaller text (Desktop)
+    description: smaller Character size (Desktop)
     title.de: Slide - kompakt
-    description.de: Wiederherstellung kleinerer Text (PCs)
+    description.de: Kleinere Charactergröße (PCs)
     type: class-toggle
   -
     id: show-touch-area
@@ -1209,6 +1398,13 @@ settings:
     title.de: Oberfläche verstecken
     description.de: Obsidian temporär unkenntlich zeichnen
     type: class-toggle
+  -
+    id: snipp-info
+    title: Snippets
+    title.de: Schnipsel
+    description: A) [Folder icons](https://github.com/Jopp-gh/Obsidian-Dune84/blob/main/snippets/folder-icons-v2.css) <br> B) [Mermaid-theme](https://github.com/Jopp-gh/Obsidian-Dune84/blob/main/snippets/Dune-mermaid.css)
+    type: info-text
+    markdown: true
 */
 
 body {
@@ -1258,6 +1454,7 @@ body {
     --header-font: Helvetica;
     --bold-font: Helvetica;
     --poetry-initial: "Manuskript Gothisch";
+    --initial-sz: 110px;
     --editor-font: var(--default-font), var(--default-font);
     --font-text-theme: var(--default-font);
     --font-interface-theme: var(--default-font);
@@ -1284,13 +1481,20 @@ body {
     --custom-margin-below-header: 8px;
     --deco-scale: 0.5;
 
+    --bwidth-s: 2px;
+    --bwidth-a: 10px;
+    --bwidth-b: 10px;
+    --bwidth-c: 10px;
+    --bwidth-d: 10px;
     --banner-ah: 240px;
     --banner-bh: 240px;
     --pictwall-height: 200px;
     --pictwall-width: 1400px;
-
+    --max-width-tabs: 120px;
+    --indent-l: 4em;
     /* --default-line-w: 900px; */
     /* --file-folding-offset: 24px; */
+    --custom-max-line-width: 700px;
     --file-line-width: var(--custom-max-line-width);
 
     --property-height: 32px;
@@ -1357,7 +1561,6 @@ body.theme-light {
     --def-green: #52a543;
     --def-blue: cornflowerblue;
     --def-yellow: #e6b300;
-
     --frame-color: #4a6cb0;
 
     --code-background: var(--background-primary);
@@ -1406,7 +1609,6 @@ body.theme-dark {
     --def-yellow: #c69a00;
 
     --frame-color: #c66102;
-
     --code-background: var(--background-primary);
     --code-normal: var(--text-muted);
     --code-comment: var(--code-color);
@@ -1574,7 +1776,7 @@ Vault loading
 }
 
 .progress-bar {
-    background: linear-gradient(360deg, #dcaa8b, #cb3333, var(--text-accent-special));
+    background: linear-gradient(360deg, darkred, #cb3333, rgb(57, 0, 88));
     background-size: 200% 200%;
     animation: gradient-slow 8s ease infinite;
 }
@@ -1767,6 +1969,31 @@ NAVI BAR
 .workspace-tab-header.is-active .workspace-tab-header-inner-title {
     font-weight: bold;
 }
+
+
+.workspace .mod-root:not(.workspace-tabs.mod-stacked).workspace-tab-header .workspace-tab-header-inner-close-button,
+.workspace .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button {
+    width: 0;
+    visibility: hidden;
+}
+
+.workspace .mod-root .workspace-tab-header:hover .workspace-tab-header-inner-close-button,
+.workspace .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button:hover {
+    color: var(--text-accent-special);
+    visibility: visible;
+    width: auto;
+}
+
+/* stacked */
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner-close-button {
+    opacity: 0;
+}
+
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner-close-button:hover {
+    opacity: 1;
+    color: var(--text-accent-special);
+}
+
 
 .workspace-ribbon {
     border-right: none;
@@ -2142,6 +2369,22 @@ body:not(.is-phone) .nav-file-title.recent-files-title:hover .tree-item-inner.na
     color: white;
 }
 
+/* grid toolbars */
+body:not(.grid-mobile-tb) .mobile-toolbar-options-list {
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    justify-content: center;
+}
+
+body:not(.grid-mobile-tb) .mobile-toolbar-option {
+    height: 30px !important;
+}
+
+.is-phone .mobile-toolbar-options-container {
+    height: 60px;
+}
+
 /* folder tree highlight */
 .is-phone .tree-item-self .nav-folder>.nav-folder-title:active,
 .is-phone .tree-item-self .nav-folder>.nav-folder-title:hover {
@@ -2207,13 +2450,37 @@ body:not(.show-prop) .metadata-container,
     margin-bottom: -40px;
 }
 
+.is-phone .metadata-property-value {
+    min-height: 32px;
+    overflow: auto;
+}
+
+.is-phone .metadata-property-value {
+    border-bottom: none;
+}
+
+.is-phone .metadata-property-value ::-webkit-scrollbar {
+    width: 0;
+}
+
+.is-phone .metadata-property-key {
+    border-bottom: 0;
+}
+
+.is-phone .metadata-input-longtext:not(:empty) {
+    padding-top: 28px;
+}
+
 .metadata-property-value .multi-select-input {
     text-align: start;
 }
 
 .metadata-property[data-property-key="tags"] .metadata-property-value .multi-select-input {
-    top: 2px;
     position: relative;
+}
+
+.is-phone .metadata-property-value .multi-select-input {
+    display: contents;
 }
 
 .metadata-properties-title {
@@ -2306,10 +2573,17 @@ input.metadata-property-key-input {
 
 .metadata-property[data-property-key="tags"] .multi-select-pill {
     margin-left: -10px;
+    align-items: baseline;
 }
 
 .multi-select-pill-content:hover {
     color: var(--text-accent-special);
+}
+
+.metadata-property .multi-select-container {
+    white-space: nowrap;
+    display: contents;
+    overflow: auto;
 }
 
 /*----------------------------------------------------------------
@@ -2392,7 +2666,7 @@ Font models
 
 .ftheme-2 .markdown-preview-section :is(h1, h2, h3, h4, h5, h6),
 .ftheme-2 .markdown-rendered :is(h1, h2, h3, h4, h5, h6) {
-    font-family: var(--handwritten-font-h) !important;
+    font-family: var(--modern-font-h) !important;
 }
 
 .ftheme-3 .markdown-preview-section :is(h1, h2, h3, h4, h5, h6),
@@ -2411,7 +2685,7 @@ Font models
 }
 
 .ftheme-2 .markdown-preview-section :is(p) {
-    font-family: var(--handwritten-font-c) !important;
+    font-family: var(--modern-font-c) !important;
 }
 
 .ftheme-3 .markdown-preview-section :is(p) {
@@ -2469,17 +2743,17 @@ body:not(.is-phone) :is(div.callout-content h6 em,
     font-size: var(--custom-fsz-1);
 }
 
-/* handwritten */
+/* modern */
 .fontmod-2 .markdown-source-view :is(.cm-header-1, .cm-header-2, .cm-header-3, .cm-header-4, .cm-header-5, .cm-header-6),
 .fontmod-2 .markdown-rendered :is(h1, h2, h3, h4, h5, h6) {
-    font-family: var(--handwritten-font-h);
+    font-family: var(--modern-font-h);
     color: var(--header-col);
     text-align: inherit;
 }
 
 .fontmod-2 .markdown-source-view:not(.cm-header-1, .cm-header-2, .cm-header-3, .cm-header-4, .cm-header-5, .cm-header-6),
 .fontmod-2 .markdown-preview-view :is(p, code, li, th, td, .callout-title-inner) {
-    font-family: var(--handwritten-font-c);
+    font-family: var(--modern-font-c);
     font-size: var(--custom-fsz-2);
 }
 
@@ -2578,23 +2852,21 @@ body:not(.is-phone) :is(h1, .HyperMD-header-1, .markdown-rendered h1) {
 .callout[data-callout="font-s"] {
     background: transparent;
     padding-left: 0;
-    color: var(--text-normal);
 }
 
 .callout[data-callout="font-l"] {
     background: transparent;
     padding-left: 0;
-    color: var(--text-normal);
 }
 
 .callout[data-callout~="font-l"] .callout-content p {
     font-size: larger;
-    color: initial;
+    color: var(--text-normal);
 }
 
 .callout[data-callout~="font-s"] .callout-content p {
     font-size: small;
-    color: initial;
+    color: var(--text-normal);
 }
 
 .callout[data-callout~="font-s"] .callout-title,
@@ -2769,7 +3041,11 @@ SYNTAX COL
 ----------------------------------------------------------------*/
 .indent-p p,
 .indent-p .markdown-source-view .cm-line:not(.HyperMD-header.cm-line) {
-    text-indent: 4em;
+    text-indent: var(--indent-l);
+}
+
+.writer-mode .cm-line:not(.cm-active.cm-line) {
+    filter: opacity(0.2);
 }
 
 .theme-light:is(.code-utils) .cm-active.cm-line {
@@ -2860,9 +3136,6 @@ ALIGNMENT
     text-align: initial;
 }
 
-.setting-item-info>.setting-item-description div {
-    font-size: medium;
-}
 
 /*----------------------------------------------------------------
 highlights
@@ -2892,8 +3165,6 @@ highlights
 
 /* Html custom Highlight */
 .cm-s-obsidian span.cm-highlight {
-    border-radius: 16px 2px;
-    padding: 0 4px 0 4px;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
 }
@@ -2911,9 +3182,12 @@ highlights
     color: black;
 }
 
+.theme-dark .markdown-rendered mark .external-link {
+    filter: brightness(1.4);
+}
+
 /* Quotes */
 .cm-s-obsidian span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight) {
-    /* vertical-align: baseline; */
     border-radius: 4px;
     padding: 2px 5px;
 }
@@ -2922,12 +3196,12 @@ highlights
     color: var(--text-accent-special);
 }
 
-/* todo */
+/* todo 
+.cm-comment*/
 .token.comment,
 .token.prolog,
 .token.doctype,
-.token.cdata,
-.cm-comment {
+.token.cdata {
     color: var(--code-color) !important;
 }
 
@@ -2936,6 +3210,10 @@ highlights
 .theme-light pre:not(pre[class*="language-"]) {
     background-color: #7e756629;
     min-width: var(--min-boxwidth);
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+    background: rgb(128 128 128 / 10%);
 }
 
 .is-phone .markdown-rendered pre {
@@ -3019,6 +3297,11 @@ sub {
     border-radius: 4px;
 }
 
+.markdown-rendered blockquote> :first-child,
+.markdown-rendered blockquote> :last-child {
+    padding-bottom: 4px;
+}
+
 .theme-dark .cm-s-obsidian span.cm-quote {
     background-color: #7e756646;
 }
@@ -3032,9 +3315,12 @@ body:is(.is-phone) blockquote p {
     padding-right: 8px;
 }
 
-.cm-comment,
-.cm-hmd-codeblock {
+.cm-comment {
     filter: contrast(0.4) saturate(0);
+}
+
+div.internal-embed.media-embed.image-embed .cm-comment {
+    filter: saturate(0.0);
 }
 
 .cm-s-obsidian .cm-comment.cm-inline-code {
@@ -3081,190 +3367,353 @@ body:is(.is-phone) blockquote p {
  custom highlights
 ----------------------------------------------------------------*/
 
-a:is([href^="#red"], [href^="#green"], [href^="#blue"], [href^="#gray"], [href^="#font-s"], [href^="#red-s"], [href^="#green-s"], [href^="#blue-s"], [href^="#font-l"], [href^="#red-l"], [href^="#green-l"], [href^="#blue-l"], [href^="#hlcol"], [href^="#hlcol-s"], [href^="#hlcol-l"], [href^="#spoiler"], [href^="#tips"], [href^="#sub"], [href^="#sup"], [href^="#line-a"], [href^="#line-b"], [href^="#line-c"], [href^="#ppl"], [href^="#loc"], [href^="#tel"], [href^="#edit"], [href^="#promo"], [href^="#read"], [href^="#mail"], [href^="#key"], [href^="#pin"], [href^="#cal"], [href^="#idea"], [href^="#profit"], [href^="#poetry"]) {
+a:is([href="#red"], [href="#green"], [href="#blue"], [href="#gray"], [href="#rot"], [href="#grün"], [href="#blau"], [href="#grau"][href="#font-s"], [href="#red-s"], [href="#green-s"], [href="#blue-s"], [href="#gray-s"], [href="#rot-k"], [href="#grün-k"], [href="#blau-k"], [href="#grau-k"], [href="#font-l"], [href="#red-l"], [href="#green-l"], [href="#blue-l"], [href="#gray-l"], [href="#rot-g"], [href="#grün-g"], [href="#blau-g"], [href="#grau-g"], [href="#hlcol"], [href="#hlcol-s"], [href="#hlcol-l"], [href="#spoiler"], [href="#tips"], [href="#cite-br"], [href="#cite-de"], [href="#zitat-br"], [href="#zitat-de"], [href="#sub"], [href="#sup"], [href="#line-a"], [href="#line-b"], [href="#line-c"], [href="#strich-a"], [href="#strich-b"], [href="#strich-c"], [href="#indent"], [href="#einzug"], [href="#raisecap"], [href="#initiale"], [href="#dropcap"], [href="#initiale-t"], [href="#font-1"], [href="#font-2"], [href="#font-3"], [href="#font-4"], [href="#ppl"], [href="#loc"], [href="#tel"], [href="#edit"], [href="#promo"], [href="#read"], [href="#mail"], [href="#key"], [href="#pin"], [href="#cal"], [href="#idea"], [href="#profit"], [href="#ppl"], [href="#loc"], [href="#tel"], [href="#read"], [href="#edit"], [href="#mail"], [href="#promo"], [href="#key"], [href="#pin"], [href="#cal"], [href="#idea"], [href="#profit"], [href="#kontakt"], [href="#ort"], [href="#brief"], [href="#lese"], [href="#bearbeite"], [href="#schlüssel"], [href="#merke"], [href="#kal"], [href="#idee"]) {
     display: none !important;
 }
 
-.theme-light a:is([href^="#red"],
-    [href^="#green"], [href^="#blue"],
-    [href^="#gray"], [href^="#hlcol"])+mark {
+/* .theme-light a:is([href="#red"], [href="#rot"], [href="#green"], [href="#grün"], [href="#blue"], [href="#blau"], [href="#gray"], [href="#grau"], [href="#red-s"], [href="#rot-k"], [href="#green-s"], [href="#grün-k"], [href="#blue-s"], [href="#blau-k"], [href="#gray-s"], [href="#grau-k"], [href="#red-l"], [href="#rot-g"], [href="#green-l"], [href="#grün-g"], [href="#blue-l"], [href="#blau-g"], [href="#gray-l"], [href="#grau-g"], [href="#hlcol"])+mark {
     filter: contrast(1.2) brightness(1.2);
 }
 
-.theme-light a:is([href^="#red"],
-    [href^="#green"], [href^="#blue"],
-    [href^="#gray"])+strong,
-.theme-light a:is([href^="#red"],
-    [href^="#green"], [href^="#blue"],
-    [href^="#gray"])+em {
+.theme-light a:is([href="#red"], [href="#rot"], [href="#green"], [href="#grün"], [href="#blue"], [href="#blau"], [href="#gray"], [href="#grau"], [href="#red-s"], [href="#rot-k"], [href="#green-s"], [href="#grün-k"], [href="#blue-s"], [href="#blau-k"], [href="#gray-s"], [href="#grau-k"], [href="#red-l"], [href="#rot-g"], [href="#green-l"], [href="#grün-g"], [href="#blue-l"], [href="#blau-g"], [href="#gray-l"], [href="#grau-g"])+strong,
+.theme-light a:is([href="#red"], [href="#rot"], [href="#green"], [href="#grün"], [href="#blue"], [href="#blau"], [href="#gray"], [href="#grau"], [href="#red-s"], [href="#rot-k"], [href="#green-s"], [href="#grün-k"], [href="#blue-s"], [href="#blau-k"], [href="#gray-s"], [href="#grau-k"], [href="#red-l"], [href="#rot-g"], [href="#green-l"], [href="#grün-g"], [href="#blue-l"], [href="#blau-g"], [href="#gray-l"], [href="#grau-g"])+em {
     filter: contrast(1.5) brightness(0.8);
-}
+} */
 
-a[href^="#red"]+mark {
+a[href="#red"]+mark,
+a[href="#rot"]+mark {
     background-color: var(--def-red);
     color: var(--text-normal);
 }
 
-a[href^="#red"]+strong,
-a[href^="#red"]+em {
+a[href="#red"]+strong,
+a[href="#rot"]+strong,
+a[href="#red"]+em,
+a[href="#rot"]+em {
     color: var(--def-red);
     font-family: inherit;
     font-size: inherit;
 }
 
-a[href^="#green"]+mark {
+a[href="#green"]+mark,
+a[href="#grün"]+mark {
     background-color: var(--def-green);
     color: var(--text-normal);
 }
 
-a[href^="#green"]+strong,
-a[href^="#green"]+em {
+a[href="#green"]+strong,
+a[href="#grün"]+strong,
+a[href="#green"]+em,
+a[href="#grün"]+em {
     color: var(--def-green);
     font-family: inherit;
     font-size: inherit;
 }
 
-a[href^="#blue"]+mark {
+a[href="#blue"]+mark,
+a[href="#blau"]+mark {
     background-color: var(--def-blue);
     color: var(--text-normal);
 }
 
-a[href^="#blue"]+strong,
-a[href^="#blue"]+em {
+a[href="#blue"]+strong,
+a[href="#blau"]+strong,
+a[href="#blue"]+em,
+a[href="#blau"]+em {
     color: var(--def-blue);
     font-family: inherit;
     font-size: inherit;
 }
 
-a[href^="#gray"]+mark {
-    background-color: rgb(128, 128, 128, 0.7);
+a[href="#gray"]+mark,
+a[href="#grau"]+mark {
+    background-color: rgba(128, 128, 128, 0.7);
     color: var(--text-normal);
 }
 
-a[href^="#gray"]+strong,
-a[href^="#gray"]+em {
+a[href="#gray"]+strong,
+a[href="#grau"]+strong,
+a[href="#gray"]+em,
+a[href="#grau"]+em {
     color: rgb(128, 128, 128);
     font-family: inherit;
     font-size: inherit;
 }
 
-a[href^="#hlcol"]+mark {
+a[href="#hlcol"]+mark {
     background-color: var(--hl-col);
     color: var(--text-normal);
 }
 
-a[href^="#hlcol"]+strong,
-a[href^="#hlcol"]+em {
+a[href="#hlcol"]+strong,
+a[href="#hlcol"]+em {
     color: var(--hl-col);
     font-family: inherit;
     font-size: inherit;
 }
 
 /* small fonts */
-a[href^="#font-s"]+mark {
-    background-color: transparent;
+a[href="#font-s"]+mark,
+a[href="#rot-k"]+strong,
+a[href="#rot-k"]+em,
+a[href="#red-s"]+strong,
+a[href="#red-s"]+em,
+a[href="#grün-k"]+strong,
+a[href="#grün-k"]+em,
+a[href="#green-s"]+strong,
+a[href="#green-s"]+em,
+a[href="#blau-k"]+strong,
+a[href="#blau-k"]+em,
+a[href="#blue-s"]+strong,
+a[href="#blue-s"]+em,
+a[href="#grau-k"]+strong,
+a[href="#grau-k"]+em,
+a[href="#gray-s"]+strong,
+a[href="#gray-s"]+em,
+a[href="#hlcol-s"]+strong,
+a[href="#hlcol-s"]+em {
     font-size: small !important;
+}
+
+a[href="#font-l"]+mark,
+a[href="#rot-g"]+strong,
+a[href="#rot-g"]+em,
+a[href="#red-l"]+strong,
+a[href="#red-l"]+em,
+a[href="#grün-g"]+strong,
+a[href="#grün-g"]+em,
+a[href="#green-l"]+strong,
+a[href="#green-l"]+em,
+a[href="#blau-g"]+strong,
+a[href="#blau-g"]+em,
+a[href="#blue-l"]+strong,
+a[href="#blue-l"]+em,
+a[href="#grau-g"]+strong,
+a[href="#grau-g"]+em,
+a[href="#gray-l"]+strong,
+a[href="#gray-l"]+em,
+a[href="#hlcol-l"]+strong,
+a[href="#hlcol-l"]+em {
+    font-size: large !important;
+}
+
+a[href="#font-s"]+mark {
+    background-color: transparent;
     color: var(--text-normal);
 }
 
-a[href^="#red-s"]+strong,
-a[href^="#red-s"]+em {
+a[href="#rot-k"]+strong,
+a[href="#rot-k"]+em,
+a[href="#red-s"]+strong,
+a[href="#red-s"]+em {
     background-color: transparent;
     color: var(--def-red);
-    font-size: small !important;
     font-family: inherit;
 }
 
-a[href^="#green-s"]+strong,
-a[href^="#green-s"]+em {
+a[href="#grün-k"]+strong,
+a[href="#grün-k"]+em,
+a[href="#green-s"]+strong,
+a[href="#green-s"]+em {
     background-color: transparent;
     color: var(--def-green);
-    font-size: small !important;
     font-family: inherit;
 }
 
-a[href^="#blue-s"]+strong,
-a[href^="#blue-s"]+em {
+a[href="#blau-k"]+strong,
+a[href="#blau-k"]+em,
+a[href="#blue-s"]+strong,
+a[href="#blue-s"]+em {
     background-color: transparent;
     color: var(--def-blue);
-    font-size: small !important;
     font-family: inherit;
 }
 
-a[href^="#hlcol-s"]+strong,
-a[href^="#hlcol-s"]+em {
+a[href="#grau-k"]+strong,
+a[href="#grau-k"]+em,
+a[href="#gray-s"]+strong,
+a[href="#gray-s"]+em {
+    background-color: transparent;
+    color: var(--def-blue);
+    font-family: inherit;
+}
+
+a[href="#hlcol-s"]+strong,
+a[href="#hlcol-s"]+em {
     background-color: transparent;
     color: var(--hl-col);
-    font-size: small !important;
     font-family: inherit;
 }
 
 /* large */
-a[href^="#font-l"]+mark {
+a[href="#font-l"]+mark {
     background-color: transparent;
     font-size: large !important;
     color: var(--text-normal);
 }
 
-a[href^="#red-l"]+strong,
-a[href^="#red-l"]+em {
+a[href="#rot-g"]+strong,
+a[href="#rot-g"]+em,
+a[href="#red-l"]+strong,
+a[href="#red-l"]+em {
     background-color: transparent;
     color: var(--def-red);
-    font-size: large !important;
     font-family: inherit;
 }
 
-a[href^="#green-l"]+strong,
-a[href^="#green-l"]+em {
+a[href="#grün-g"]+strong,
+a[href="#grün-g"]+em,
+a[href="#green-l"]+strong,
+a[href="#green-l"]+em {
     background-color: transparent;
     color: var(--def-green);
-    font-size: large !important;
     font-family: inherit;
 }
 
-a[href^="#blue-l"]+strong,
-a[href^="#blue-l"]+em {
+a[href="#blau-g"]+strong,
+a[href="#blau-g"]+em,
+a[href="#blue-l"]+strong,
+a[href="#blue-l"]+em {
     background-color: transparent;
     color: var(--def-blue);
-    font-size: large !important;
     font-family: inherit;
 }
 
-a[href^="#hlcol-l"]+strong,
-a[href^="#hlcol-l"]+em {
+a[href="#grau-g"]+strong,
+a[href="#grau-g"]+em,
+a[href="#gray-l"]+strong,
+a[href="#gray-l"]+em {
+    background-color: transparent;
+    color: var(--def-blue);
+    font-family: inherit;
+}
+
+a[href="#hlcol-l"]+strong,
+a[href="#hlcol-l"]+em {
     background-color: transparent;
     color: var(--hl-col);
-    font-size: large !important;
     font-family: inherit;
 }
 
-a[href^="#sup"]+mark {
+a[href^="#font-"]+mark {
+    background-color: transparent;
+    color: var(--text-normal);
+    padding: 0;
+}
+
+a[href="#font-1"]+mark {
+    font-family: var(--default-font);
+}
+
+a[href="#font-2"]+mark {
+    font-family: var(--modern-font-c);
+}
+
+a[href="#font-3"]+mark {
+    font-family: var(--poetry-font-c);
+}
+
+a[href="#font-4"]+mark {
+    font-family: var(--custom-font-c);
+}
+
+a[href="#sup"]+mark {
     background-color: transparent;
     color: var(--text-normal);
     vertical-align: super;
     font-size: smaller;
 }
 
-a[href^="#sub"]+mark {
+a[href="#sub"]+mark {
     background-color: transparent;
     color: var(--text-normal);
     vertical-align: sub;
     font-size: smaller;
 }
 
-a[href^="#spoiler"]+mark {
+a[href="#zitat-de"]+mark::before,
+a[href="#cite-de"]+mark::before {
+    content: "❞";
+    top: 6px;
+    position: relative;
+}
+
+a[href="#zitat-de"]+mark::after,
+a[href="#cite-de"]+mark::after {
+    content: "❝";
+    position: relative;
+    top: -2px;
+}
+
+a[href="#zitat-br"]+mark::before,
+a[href="#cite-br"]+mark::before {
+    content: "❝";
+}
+
+a[href="#zitat-br"]+mark::after,
+a[href="#cite-br"]+mark::after {
+    content: "❞";
+}
+
+a[href^="#zitat-"]+mark,
+a[href^="#cite-"]+mark {
+    background-color: transparent;
+    color: var(--text-normal);
+}
+
+a[href="#einzug"]+mark::before,
+a[href="#indent"]+mark::before {
+    content: "";
+    width: var(--indent-l);
+    display: inline-block;
+}
+
+a[href="#einzug"]+mark,
+a[href="#indent"]+mark {
+    background-color: transparent;
+    color: var(--text-normal);
+    padding: 0;
+}
+
+/* raisecap */
+a[href="#initiale"]+mark,
+a[href="#raisecap"]+mark {
+    background-color: transparent;
+    font-family: var(--poetry-initial);
+    font-size: var(--initial-sz);
+    color: var(--drop-cap-col);
+    padding: inherit;
+    height: 0;
+    display: inline-block;
+}
+
+/* dropcap */
+a[href="#initiale-t"]+mark,
+a[href="#dropcap"]+mark {
+    background-color: transparent;
+    font-family: var(--poetry-initial);
+    font-size: var(--initial-sz);
+    color: var(--drop-cap-col);
+    margin-bottom: calc(0px - var(--initial-sz));
+    top: calc(0px - var(--initial-sz) / 2);
+    float: left;
+    position: relative;
+    padding-left: 0;
+}
+
+a[href="#spoiler"]+mark {
     background-color: #454545;
     border-radius: 0;
     color: transparent;
 }
 
-a[href^="#spoiler"]+mark:hover {
+a[href="#spoiler"]+mark:hover {
     background-color: transparent;
     color: var(--text-normal);
 }
 
 /* help */
-a[href^="#tips"]+mark {
+a[href="#tips"]+mark {
     color: transparent;
     background-color: transparent;
     width: 26px;
@@ -3272,16 +3721,16 @@ a[href^="#tips"]+mark {
     line-height: 0px;
 }
 
-a[href^="#tips"]+mark::after {
+a[href="#tips"]+mark::after {
     content: "💬";
     color: var(--text-normal);
 }
 
-a[href^="#tips"]+mark:hover::after {
+a[href="#tips"]+mark:hover::after {
     content: "";
 }
 
-a[href^="#tips"]+mark:hover {
+a[href="#tips"]+mark:hover {
     width: max-content !important;
     background-color: gray;
     color: white;
@@ -3291,96 +3740,117 @@ a[href^="#tips"]+mark:hover {
     animation: fadeIn 1s;
 }
 
-.is-mobile a[href^="#tips"]+mark:hover {
+.is-mobile a[href="#tips"]+mark:hover {
     display: inline;
     animation: fadeIn 1s;
 }
 
-a[href^="#line-a"]+mark {
+a[href="#line-a"]+mark,
+a[href="#strich-a"]+mark,
+a[href="#line-b"]+mark,
+a[href="#strich-b"]+mark,
+a[href="#line-c"]+mark,
+a[href="#strich-c"]+mark {
     background-color: transparent;
     color: var(--text-normal);
+    padding: 0;
+}
+
+a[href="#line-a"]+mark,
+a[href="#strich-a"]+mark {
     text-decoration: underline;
 }
 
-a[href^="#line-b"]+mark {
-    background-color: transparent;
-    color: var(--text-normal);
+a[href="#line-b"]+mark,
+a[href="#strich-b"]+mark {
     text-decoration: underline double;
 }
 
-a[href^="#line-c"]+mark {
-    background-color: transparent;
-    color: var(--text-normal);
+a[href="#line-c"]+mark,
+a[href="#strich-c"]+mark {
     text-decoration: line-through;
 }
 
-a[href^="#poetry"]+mark {
-    background-color: transparent;
-    color: inherit;
-    font-family: var(--poetry-font-h);
-}
-
-a[href^="#ppl"]+mark,
-a[href^="#loc"]+mark,
-a[href^="#tel"]+mark,
-a[href^="#read"]+mark,
-a[href^="#edit"]+mark,
-a[href^="#mail"]+mark,
-a[href^="#promo"]+mark,
-a[href^="#key"]+mark,
-a[href^="#pin"]+mark,
-a[href^="#cal"]+mark,
-a[href^="#idea"]+mark,
-a[href^="#profit"]+mark {
+/* icon tag */
+a[href="#ppl"]+mark,
+a[href="#loc"]+mark,
+a[href="#tel"]+mark,
+a[href="#read"]+mark,
+a[href="#edit"]+mark,
+a[href="#mail"]+mark,
+a[href="#promo"]+mark,
+a[href="#key"]+mark,
+a[href="#pin"]+mark,
+a[href="#cal"]+mark,
+a[href="#idea"]+mark,
+a[href="#profit"]+mark,
+a[href="#kontakt"]+mark,
+a[href="#ort"]+mark,
+a[href="#brief"]+mark,
+a[href="#lese"]+mark,
+a[href="#bearbeite"]+mark,
+a[href="#schlüssel"]+mark,
+a[href="#merke"]+mark,
+a[href="#kal"]+mark,
+a[href="#idee"]+mark {
     background-color: transparent;
     color: var(--prop-col);
 }
 
-a[href^="#ppl"]+mark::before {
+a[href="#ppl"]+mark::before,
+a[href="#kontakt"]+mark::before {
     content: "👤 ";
 }
 
-a[href^="#loc"]+mark::before {
+a[href="#loc"]+mark::before,
+a[href="#ort"]+mark::before {
     content: "📍 ";
 }
 
-a[href^="#tel"]+mark::before {
+a[href="#tel"]+mark::before {
     content: "📞 ";
 }
 
-a[href^="#mail"]+mark::before {
+a[href="#mail"]+mark::before,
+a[href="#brief"]+mark::before {
     content: "✉️ ";
 }
 
-a[href^="#read"]+mark::before {
+a[href="#lese"]+mark::before,
+a[href="#read"]+mark::before {
     content: "📖 ";
 }
 
-a[href^="#edit"]+mark::before {
+a[href="#edit"]+mark::before,
+a[href="#bearbeite"]+mark::before {
     content: "🖋 ";
 }
 
-a[href^="#promo"]+mark::before {
+a[href="#promo"]+mark::before {
     content: "📢 ";
 }
 
-a[href^="#key"]+mark::before {
+a[href="#schlüssel"]+mark::before,
+a[href="#key"]+mark::before {
     content: "🔑 ";
 }
 
-a[href^="#pin"]+mark::before {
+a[href="#merke"]+mark::before,
+a[href="#pin"]+mark::before {
     content: "📌 ";
 }
 
-a[href^="#cal"]+mark::before {
+a[href="#kal"]+mark::before,
+a[href="#cal"]+mark::before {
     content: "📅 ";
 }
 
-a[href^="#idea"]+mark::before {
+a[href="#idee"]+mark::before,
+a[href="#idea"]+mark::before {
     content: "💡 ";
 }
 
-a[href^="#profit"]+mark::before {
+a[href="#profit"]+mark::before {
     content: "💰 ";
 }
 
@@ -3395,6 +3865,7 @@ CALLOUT
 
 body {
     --callout-min-width: 200px;
+    --callout-nowrap-min-width: 200px;
     --callout-gap: 0.5rem;
     --callout-margin: 4px;
     --list-min-width: 200px;
@@ -3679,38 +4150,44 @@ div[data-callout-metadata*="50"].callout {
     mix-blend-mode: normal;
 }
 
-.callout[data-callout-metadata~="yellow"] {
-    background-color: var(--def-yellow);
+.callout[data-callout-metadata~="yellow"],
+.callout[data-callout-metadata~="gelb"] {
+    background-color: #ebcb63;
 }
 
-.callout[data-callout-metadata~="red"] {
-    background-color: var(--def-red);
+.callout[data-callout-metadata~="red"],
+.callout[data-callout-metadata~="rot"] {
+    background-color: #efa37f;
 }
 
-.callout[data-callout-metadata~="green"] {
-    background-color: var(--def-green);
+.callout[data-callout-metadata~="green"],
+.callout[data-callout-metadata~="grün"] {
+    background-color: #aacc63;
 }
 
-.callout[data-callout-metadata~="blue"] {
-    background-color: var(--def-blue);
+.callout[data-callout-metadata~="blue"],
+.callout[data-callout-metadata~="blau"] {
+    background-color: #a6c2df;
 }
 
-.callout[data-callout-metadata~="gray"] {
-    background-color: rgba(167, 167, 167, 0.6);
+.callout[data-callout-metadata~="gray"],
+.callout[data-callout-metadata~="grau"] {
+    background-color: #c9c9c9;
 }
 
 .callout[data-callout-metadata~="col"] {
     background-color: var(--call-hlcol);
 }
 
-.theme-light .callout[data-callout]:is([data-callout-metadata~="yellow"], [data-callout-metadata~="red"], [data-callout-metadata~="green"], [data-callout-metadata~="blue"], [data-callout-metadata~="gray"], [data-callout-metadata~="col"]) {
-    --callout-color: black;
+.callout[data-callout]:is([data-callout-metadata~="yellow"], [data-callout-metadata~="gelb"], [data-callout-metadata~="red"], [data-callout-metadata~="rot"], [data-callout-metadata~="green"], [data-callout-metadata~="grün"], [data-callout-metadata~="blue"], [data-callout-metadata~="blau"], [data-callout-metadata~="gray"],
+    [data-callout-metadata~="grau"], [data-callout-metadata~="col"]) {
+    --callout-color: 0 0 139;
     mix-blend-mode: normal;
+    color: black;
 }
 
-.theme-dark .callout[data-callout]:is([data-callout-metadata~="yellow"], [data-callout-metadata~="red"], [data-callout-metadata~="green"], [data-callout-metadata~="blue"], [data-callout-metadata~="gray"], [data-callout-metadata~="col"]) {
-    --callout-color: white;
-    mix-blend-mode: normal;
+.markdown-source-view.mod-cm6 .cm-foldPlaceholder {
+    color: inherit;
 }
 
 /*----------------------------------------------------------------
@@ -3766,6 +4243,7 @@ code.language-memo-col.is-loaded {
 code.language-fnote.is-loaded {
     width: fit-content;
     font-style: italic;
+    font-size: small !important;
     color: var(--text-normal);
 }
 
@@ -3800,9 +4278,7 @@ code.language-memo-b.is-loaded,
 .app-container pre.language-memo-m,
 code.language-memo-m.is-loaded,
 .app-container pre.language-memo-col,
-code.language-memo-col.is-loaded,
-.app-container pre.language-fnote,
-code.language-fnote.is-loaded {
+code.language-memo-col.is-loaded {
     max-width: 340px;
     min-width: var(--min-boxwidth);
 }
@@ -4102,9 +4578,41 @@ body:not(.prg-break) .markdown-preview-view :is(p) {
 /*----------------------------------------------------------------
 footnotes normal
 ----------------------------------------------------------------*/
+body:not(.footnote-g) .markdown-preview-section .footnotes {
+    position: absolute;
+    width: 340px;
+    float: right;
+    top: 12%;
+}
 
-.markdown-preview-section .footnotes {
-    font-size: 80%;
+body:not(.footnote-g) .markdown-preview-view:not(.is-readable-line-width) .markdown-preview-section .footnotes,
+body:not(.footnote-g) .markdown-source-view:not(.is-readable-line-width) .markdown-preview-section .footnotes {
+    right: -24em;
+}
+
+body:not(.footnote-g) .is-phone .markdown-preview-section .footnotes {
+    right: -4em
+}
+
+body:not(.footnote-g) .markdown-preview-view:is(.is-readable-line-width) .markdown-preview-section .footnotes,
+body:not(.footnote-g) .markdown-source-view:is(.is-readable-line-width) .markdown-preview-section .footnotes {
+    left: calc(var(--custom-max-line-width) + 26em);
+}
+
+body:not(.footnote-g) .markdown-preview-section .footnotes hr {
+    display: none;
+}
+
+body:not(.footnote-g) .markdown-preview-section .footnotes ol>li::marker {
+    content: counter(list-item) ". ";
+    font-size: small;
+    color: var(--text-normal);
+}
+
+.footnotes li {
+    font-size: small !important;
+    border-bottom: 1px solid var(--text-normal);
+    margin-bottom: 0.4em;
 }
 
 .footnotes p {
@@ -4113,7 +4621,7 @@ footnotes normal
 }
 
 .is-flashing {
-    transition: background-color 200ms ease;
+    transition: background-color 100ms ease;
 }
 
 .theme-dark .is-flashing {
@@ -4128,6 +4636,10 @@ a.footnote-link {
     color: var(--text-normal);
 }
 
+.is-phone a.footnote-link {
+    vertical-align: bottom;
+}
+
 /*----------------------------------------------------------------
 Buttons - Preferences
 ----------------------------------------------------------------*/
@@ -4136,13 +4648,17 @@ Buttons - Preferences
     color: var(--text-accent-special);
 }
 
+.community-modal-info .markdown-rendered thead tr {
+    background-color: gray;
+}
+
 .modal-content .community-modal-readme :is(h1, .markdown-rendered h1) {
     font-size: 2em;
 }
 
 /* breaks full-length urls */
 .is-phone a {
-    word-break: break-all
+    word-break: break-word;
 }
 
 .community-modal-info ul>li.task-list-item .task-list-item-checkbox {
@@ -4232,7 +4748,7 @@ Buttons - Preferences
 }
 
 /* prefs window proportins */
-body:not(.is-phone) .modal {
+body:not(.is-phone) .modal:not(.svelte-qhdq3h) {
     max-width: 75%;
     max-height: 69%;
     margin-bottom: 10%;
@@ -4326,6 +4842,14 @@ body:not(.is-phone) .style-settings-collapse-indicator {
 }
 
 /* NAVBAR - simple */
+.view-action:nth-last-child(2) svg:is(.lucide-book-open) {
+    border: 1px dashed;
+}
+
+.view-action:nth-child(1) svg:is(.lucide-bookmark) {
+    fill: transparent;
+}
+
 .is-phone .mobile-navbar-actions .clickable-icon svg.svg-icon.lucide-plus-circle,
 .is-phone button.view-action.clickable-icon.mod-left-split-toggle.mod-tappable {
     width: 0;
@@ -5224,6 +5748,7 @@ STYLED TABLES
     border-bottom: 2.27px solid black;
     overflow-x: auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.16);
+    margin-bottom: 1em;
 }
 
 .academia th,
@@ -5262,6 +5787,7 @@ STYLED TABLES
 body:not(.edgy-tables) :is(.table-r, .table-g, .table-b, .table-y, .table-m, .table-col, .table-xy, .table-xyr, .table-xyg, .table-xyb, .table-xym, .table-xy-col) table {
     border-collapse: separate;
     border-spacing: 0px;
+    margin-bottom: 1em;
 }
 
 body:not(.edgy-tables) :is(.table-r, .table-g, .table-b, .table-y, .table-m, .table-col, .table-xy, .table-xyr, .table-xyg, .table-xyb, .table-xym, .table-xy-col) tr>th:not(:last-child) {
@@ -5305,19 +5831,12 @@ table :not([class*="wave"], [class*="fade"], [class*="stars"]) hr {
 ASIDE NOTES
 ----------------------------------------------------------------*/
 
-.callout[data-callout="aside-l"],
-.callout[data-callout="aside-r"] {
-    background: var(--background-secondary);
-    mix-blend-mode: normal;
-    width: auto;
-    max-width: 25vw;
-    box-shadow: 0.5em 0.5em var(--bold-color);
-}
-
-.callout[data-callout^="aside-l"] p,
-.callout[data-callout^="aside-r"] p {
-    margin: 1em auto;
-    padding-top: 1em;
+.callout[data-callout="aside-lh"] .callout-title,
+.callout[data-callout="aside-rh"] .callout-title,
+.callout[data-callout="aside-l"] .callout-title,
+.callout[data-callout="aside-r"] .callout-title {
+    padding: 0;
+    display: none;
 }
 
 .callout[data-callout^=aside-] :is(h1, h2, h3, h4, h5, h6) {
@@ -5326,22 +5845,23 @@ ASIDE NOTES
     text-align: center;
 }
 
-.callout[data-callout="aside-l"] .callout-content,
-.callout[data-callout="aside-r"] .callout-content,
-.callout[data-callout="aside-lh"] .callout-content,
-.callout[data-callout="aside-rh"] .callout-content {
-    font-size: small;
-    margin-top: -1em;
+.callout[data-callout^="aside-l"],
+.callout[data-callout^="aside-r"] {
+    background: var(--background-secondary);
+    mix-blend-mode: normal;
+    width: auto;
+    max-width: 25vw;
+    box-shadow: 0.25em 0.25em var(--bold-color);
 }
 
 .callout[data-callout="aside-l"],
-.callout[data-callout="aside-lh"]:hover {
+.callout[data-callout="aside-lh"] {
     float: left;
     clear: left;
 }
 
 .callout[data-callout="aside-r"],
-.callout[data-callout="aside-rh"]:hover {
+.callout[data-callout="aside-rh"] {
     float: right;
     clear: right;
 }
@@ -5373,14 +5893,6 @@ ASIDE NOTES
     max-width: 35vw;
 }
 
-.callout[data-callout="aside-lh"] .callout-title,
-.callout[data-callout="aside-rh"] .callout-title,
-.callout[data-callout="aside-l"] .callout-title,
-.callout[data-callout="aside-r"] .callout-title {
-    padding: 0;
-    display: none;
-}
-
 .is-phone .callout[data-callout="aside-l"],
 .is-phone .callout[data-callout="aside-r"],
 .is-phone .callout[data-callout="aside-lh"],
@@ -5388,29 +5900,13 @@ ASIDE NOTES
     max-width: 60vw !important;
 }
 
-/* hide box */
-.callout[data-callout="aside-lh"]:not(:hover),
-.callout[data-callout="aside-rh"]:not(:hover) {
-    width: 12px;
-    min-width: 12px;
-    height: 0;
-    border-radius: 0;
-    background: transparent;
-    border-bottom: 4px solid var(--bold-color);
-}
-
-.markdown-source-view.mod-cm6 .callout[data-callout="aside-lh"],
-.markdown-source-view.mod-cm6 .callout[data-callout="aside-rh"] {
-    pointer-events: none;
-}
-
 .markdown-preview-view .callout[data-callout="aside-l"],
-.markdown-preview-view .callout[data-callout="aside-lh"]:hover {
+.markdown-preview-view .callout[data-callout="aside-lh"] {
     margin: 22px 22px 22px -15px;
 }
 
 .markdown-preview-view .callout[data-callout="aside-r"],
-.markdown-preview-view .callout[data-callout="aside-rh"]:hover {
+.markdown-preview-view .callout[data-callout="aside-rh"] {
     margin: 22px -15px 22px 22px;
 }
 
@@ -5428,23 +5924,34 @@ ASIDE NOTES
     margin-top: 1em;
 }
 
-.markdown-source-view.mod-cm6 .cm-callout[data-callout="aside-rh"]:before,
-.markdown-source-view.mod-cm6 .cm-callout[data-callout="aside-lh"]:after {
-    padding: 40px;
+.markdown-preview-view .callout.callout[data-callout="aside-lh"],
+.markdown-preview-view .callout.callout[data-callout="aside-rh"] {
+    border-bottom: 4px solid var(--bold-color);
+    border-radius: 0;
+    height: 4px;
+    width: 0;
+    min-width: 40px;
+    padding: 0;
+    box-shadow: none;
 }
 
-.markdown-preview-view .callout.callout[data-callout="aside-lh"]:hover,
-.markdown-preview-view .callout.callout[data-callout="aside-rh"]:hover {
+.markdown-preview-view .callout[data-callout="aside-lh"]:hover,
+.markdown-preview-view .callout[data-callout="aside-rh"]:hover {
     background: var(--background-secondary);
+    box-shadow: 0.25em 0.25em var(--bold-color);
     mix-blend-mode: normal;
-    max-width: 30vw;
+    max-width: 20vw;
     width: auto;
-    font-size: small;
     height: 100%;
-    box-shadow: 0.5em 0.5em var(--bold-color);
-    border-bottom: 0;
+    padding: 1em;
+    border-bottom: none;
     border-radius: 4px;
-    pointer-events: all;
+    animation: fadeIn 1s;
+}
+
+.callout[data-callout^="aside-"] .callout-content p {
+    font-size: smaller;
+    /* margin-top: -1em; */
 }
 
 /*----------------------------------------------------------------
@@ -5608,6 +6115,15 @@ span.internal-embed.media-embed.image-embed[src$=".gif"].is-loaded {
     display: block;
 }
 
+.markdown-source-view .image-embed[src$=".gif"].is-loaded {
+    display: block;
+    width: 10%;
+}
+
+.markdown-source-view .image-embed[src$=".gif"].is-loaded:hover {
+    width: 90%;
+}
+
 /* add banner-a to image */
 img[alt="banner-a"] {
     position: absolute;
@@ -5651,6 +6167,9 @@ img[alt="banner-b"] {
     height: 150px;
     object-fit: cover;
     border-radius: 0;
+    left: 10px;
+    right: -10px;
+    scale: 1.06;
 }
 
 .is-phone img[alt='banner-b'] {
@@ -5658,6 +6177,9 @@ img[alt="banner-b"] {
     height: 150px;
     object-fit: cover;
     border-radius: 0;
+    left: 10px;
+    right: -10px;
+    scale: 1.06;
 }
 
 body:is(.is-phone) .banner-a .markdown-preview-section {
@@ -5811,25 +6333,25 @@ img[alt~="frame-d"] {
     border-image-slice: var(--bslice-d);
 }
 
-.is-phone [alt~="frame-a"] {
+.is-phone [alt~="frame-a"] img {
     width: 40vw;
     border: calc(var(--bwidth-a) / 2) solid;
     margin: 0;
 }
 
-.is-phone [alt~="frame-b"] {
+.is-phone [alt~="frame-b"] img {
     width: 40vw;
     border: calc(var(--bwidth-b) / 2) solid;
     margin: 0;
 }
 
-.is-phone [alt~="frame-c"] {
+.is-phone [alt~="frame-c"] img {
     width: 40vw;
     border: calc(var(--bwidth-c) / 2) solid;
     margin: 0;
 }
 
-.is-phone [alt~="frame-d"] {
+.is-phone [alt~="frame-d"] img {
     width: 40vw;
     border: calc(var(--bwidth-d) / 2) solid;
     margin: 0;
@@ -5879,6 +6401,11 @@ img[alt~="frame-d"] {
     padding: 0 4px;
 }
 
+/* tmp solution */
+.is-phone .markdown-source-view .image-embed[src*="#cap"]::after {
+    visibility: hidden;
+}
+
 /* draw label around image capture */
 .theme-light .image-embed[src*="#cap"]::after {
     border: 1px solid black;
@@ -5896,6 +6423,16 @@ img[alt~="frame-d"] {
 /* nice gallery-view */
 .markdown-preview-view .image-embed[src*="#cap"] {
     display: inline-block;
+}
+
+.markdown-source-view .image-embed[src*="#cap"]::after {
+    display: inline-block;
+    transform: translate(-130px, 20px);
+    margin-bottom: 2em;
+    width: 10%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow-x: clip;
 }
 
 .callout h1,
@@ -5919,6 +6456,12 @@ img[alt*=grid] {
 /* 
 image placed + description 
 */
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
+    max-width: var(--file-line-width);
+    margin-left: 16vw;
+}
+
+.callout[data-callout="framed"],
 .callout[data-callout="framed-l"],
 .callout[data-callout="framed-r"],
 .callout[data-callout="framed-c"] {
@@ -5930,6 +6473,7 @@ image placed + description
     min-width: fit-content;
 }
 
+.callout[data-callout="framed"],
 .callout[data-callout="framed-l"] {
     float: left;
     margin: 0;
@@ -5950,11 +6494,54 @@ image placed + description
     text-align: center;
 }
 
+.callout[data-callout~="framed"] .callout-title,
 .callout[data-callout~="framed-l"] .callout-title,
 .callout[data-callout~="framed-r"] .callout-title,
-.callout[data-callout~="framed-c"] .callout-title {
+.callout[data-callout~="framed-c"] .callout-title,
+.callout[data-callout~="framed-lg"] .callout-title,
+.callout[data-callout~="framed-rg"] .callout-title {
     padding: 0;
     display: none;
+}
+
+/* columns */
+.callout[data-callout="framed-lg"],
+.callout[data-callout="framed-rg"] {
+    background: transparent;
+    mix-blend-mode: normal;
+    position: absolute;
+    width: 210px;
+    margin: 0;
+    padding: 0;
+}
+
+.callout[data-callout="framed-lg"] .callout-content p,
+.callout[data-callout="framed-rg"] .callout-content p {
+    font-size: small;
+    text-align: justify;
+}
+
+/* visible columns */
+.markdown-source-view.mod-cm6 .cm-embed-block div.callout:is([data-callout="framed-lg"]) {
+    position: relative;
+    left: 1px;
+    width: 10vw;
+}
+
+.markdown-source-view.mod-cm6 .cm-embed-block div.callout:is([data-callout="framed-rg"]) {
+    position: relative;
+    left: 76%;
+    width: 10vw;
+}
+
+.callout[data-callout="framed-lg"] {
+    right: var(--file-line-width);
+    left: 20px;
+}
+
+.callout[data-callout="framed-rg"] {
+    left: calc(var(--custom-max-line-width) + 22vw);
+    padding-right: 6px;
 }
 
 .callout[data-callout^="framed"][data-callout-metadata~="bg"] {
@@ -5973,26 +6560,29 @@ image placed + description
     background: rgba(128, 128, 128, 0.5);
 }
 
-.callout[data-callout^="framed-l"][data-callout-metadata~="bg"] {
+.callout[data-callout="framed"][data-callout-metadata~="bg"],
+.callout[data-callout="framed-l"][data-callout-metadata~="bg"] {
     margin-right: 2em;
 }
 
-.is-phone .callout[data-callout^="framed-l"][data-callout-metadata~="bg"] {
-    margin-right: 1em;
-}
-
-.callout[data-callout^="framed-r"][data-callout-metadata~="bg"] {
+.callout[data-callout="framed-r"][data-callout-metadata~="bg"] {
     margin-left: 2em;
-}
-
-.is-phone .callout[data-callout^="framed-r"][data-callout-metadata~="bg"] {
-    margin-left: 1em;
 }
 
 .callout[data-callout^="framed"][data-callout-metadata~="bg"] .callout-content {
     padding-bottom: 1em;
 }
 
+.is-phone .callout[data-callout="framed"][data-callout-metadata~="bg"],
+.is-phone .callout[data-callout="framed-l"][data-callout-metadata~="bg"] {
+    margin-right: 1em;
+}
+
+.is-phone .callout[data-callout="framed-r"][data-callout-metadata~="bg"] {
+    margin-left: 1em;
+}
+
+.zoom-auto .markdown-source-view.mod-cm6 .callout[data-callout="framed"] .internal-embed img,
 .zoom-auto .markdown-source-view.mod-cm6 .callout[data-callout="framed-l"] .internal-embed img,
 .zoom-auto .markdown-source-view.mod-cm6 .callout[data-callout="framed-r"] .internal-embed img {
     pointer-events: none !important;
@@ -6004,6 +6594,7 @@ image placed + description
     text-align: center;
 }
 
+.is-phone .callout[data-callout="framed"],
 .is-phone .callout[data-callout="framed-l"] {
     margin-left: -15px;
 }
@@ -6018,16 +6609,6 @@ image placed + description
 
 .is-phone .callout[data-callout^="framed"] :is(.internal-embed, img) {
     max-width: 50vw;
-}
-
-/* forbid zoom in source mode */
-.markdown-source-view img:hover {
-    pointer-events: none;
-}
-
-/* Grid view LP - very important*/
-.markdown-source-view.mod-cm6 .cm-line .internal-embed.image-embed {
-    max-width: 100%;
 }
 
 /* align caption to bottom border */
@@ -6354,227 +6935,16 @@ span.internal-embed.media-embed.video-embed.is-loaded[alt^="vid-"] {
 }
 
 /*----------------------------------------------------------------
-MERMAID - all declarations needs important
+MERMAID 
 ----------------------------------------------------------------*/
-
-/*mermaid resize and center*/
 .mermaid svg {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-.mermaid text.titleText {
-    fill: var(--text-normal) !important;
-}
-
-.theme-light .mermaid .node path {
-    fill: lightgray !important;
-}
-
-.theme-dark .mermaid .node path {
-    fill: slategray !important;
-}
-
-.mermaid .taskText {
-    fill: darkred !important;
-}
-
-.theme-dark .mermaid text:is(.taskTextOutsideRight, .taskTextOutsideLeft) {
-    fill: lightblue !important;
-}
-
-.mermaid rect.activation0 {
-    fill: lightblue !important;
-}
-
-.theme-light .mermaid rect.basic.label-container {
-    fill: lightgray !important;
-}
-
-.theme-dark .mermaid rect.basic.label-container {
-    fill: dimgray !important;
-}
-
-.mermaid rect :not(.task) {
-    fill: rgba(173, 216, 230, 0.3) !important;
-}
-
-.theme-dark .mermaid polygon.label-container {
-    fill: #6b789b !important;
-}
-
-.theme-light .mermaid polygon.label-container {
-    fill: #9bb2c8 !important;
-}
-
-.mermaid polygon.state-start,
-.mermaid .node circle.state-start {
-    fill: cornflowerblue !important;
-}
-
-.mermaid polygon.state-end,
-.mermaid .node circle.state-end {
-    fill: red !important;
-}
-
-.theme-dark .mermaid circle {
-    fill: gray !important;
-}
-
-.theme-dark .mermaid .node rect {
-    fill: rgb(99 114 125 / 50%) !important;
-}
-
-.mermaid .node .fork-join {
-    fill: slategray !important;
-    stroke: gray;
-}
-
-/* works on desk, not on phone */
-.theme-dark .mermaid .node .label {
-    color: black !important;
-}
-
-.theme-light .mermaid .edgeLabel,
-.mermaid .label text,
-.mermaid span {
-    color: black !important;
-}
-
-.mermaid .exclude-range {
-    fill: slategray !important;
-}
-
-.theme-dark .mermaid .edgeLabel {
-    color: var(--text-normal) !important;
-}
-
-.theme-dark .mermaid .cluster rect {
-    fill: rgb(86 86 86 / 50%) !important;
-}
-
-.theme-dark .mermaid :not(span.nodeLabel) :is(.cluster span) {
-    color: var(--text-normal) !important;
-}
-
-.theme-dark .mermaid .legend text {
-    fill: white !important;
-}
-
-.theme-dark .mermaid .slice {
-    text-shadow: 0 0 white !important;
-}
-
-.theme-light .mermaid rect.er.entityBox {
-    fill: lightblue !important;
-}
-
-.theme-dark .mermaid rect.er.entityBox {
-    fill: #2c455f !important;
-}
-
-/* .mermaid .statediagram-cluster.statediagram-cluster .inner */
-.mermaid .statediagram-cluster rect {
-    fill: rgb(136 134 123 / 20%) !important;
-}
-
-.mermaid path.pieCircle {
-    stroke: transparent !important;
-}
-
-.theme-light .mermaid .loopText>tspan {
-    fill: gray !important;
-}
-
-.theme-dark .mermaid .loopText>tspan {
-    fill: white !important;
-}
-
-.theme-light .mermaid :is(rect.req.reqBox, rect.actor) {
-    stroke: black;
-    stroke: gray !important;
-}
-
-.theme-dark .mermaid :is(rect.req.reqBox, rect.actor) {
-    fill: #2c455f !important;
-    stroke: gray !important;
-}
-
-.theme-dark .mermaid .labelBox {
-    fill: #505050 !important;
-}
-
-.theme-light .mermaid .labelBox {
-    fill: lightgray !important;
-}
-
-.theme-light .mermaid .relation {
-    filter: contrast(0.9) brightness(0.1);
-}
-
-.theme-dark .mermaid .relation,
-.theme-dark .mermaid .messageLine0,
-.theme-dark .mermaid .messageLine1 {
-    filter: contrast(0.2) brightness(0.9) !important;
-}
-
-.theme-dark .mermaid .statediagram-note rect {
-    fill: #a3982b !important;
-}
-
-.theme-dark .mermaid rect.note {
-    fill: rgb(136 134 123 /80%) !important;
-}
-
-.theme-light .mermaid rect.note {
-    fill: lightgray !important;
-}
-
-.theme-light .mermaid .req-title-line {
-    stroke: black !important;
-}
-
-.theme-dark .mermaid .divider {
-    stroke: black !important;
-}
-
-.theme-dark .mermaid rect.er.attributeBoxOdd {
-    fill: dimgrey !important;
-}
-
-.theme-dark .mermaid rect.er.attributeBoxEven {
-    fill: slategrey !important;
-}
-
-.theme-light .mermaid rect.er.attributeBoxEven {
-    fill: lightgray !important;
-}
-
-.theme-dark .mermaid line.loopLine {
-    filter: invert(1) !important;
-}
-
-.theme-dark .mermaid .nodeLabel {
-    color: var(--text-normal) !important;
-    border-radius: 4px;
-}
-
-.theme-dark .mermaid span.nodeLabel {
-    filter: invert(1);
-}
-
-.theme-dark .mermaid .edgePaths {
-    filter: invert(1) !important;
-}
-
-.theme-dark .mermaid path:is(.flowchart-link, .transition) {
-    stroke: var(--text-normal) !important;
-    filter: contrast(0.2) brightness(0.2) !important;
-}
-
-.theme-dark .mermaid path:is(.relationshipLine) {
-    filter: contrast(0.2) brightness(1.4) !important;
+.mermaid svg[aria-roledescription="pie"] {
+    min-width: 500px;
 }
 
 /*----------------------------------------------------------------
@@ -6865,6 +7235,7 @@ body:not(.show-ui-btns).mod-macos.is-hidden-frameless:not(.is-popout-window) .si
 body:not(.show-ui-btns).mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right:hover,
 body:not(.show-ui-btns).mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-left:hover {
     opacity: 1;
+    border-bottom: inherit;
 }
 
 /* places navbar */
@@ -6887,6 +7258,19 @@ body:not(.show-ui-btns) .mod-right-split .workspace-tab-header-container-inner:h
     opacity: 1;
     /* padding-left: inherit; */
     padding-left: 2.8em;
+}
+
+body:not(.slim-bars) .workspace-tab-header-container,
+body:not(.slim-bars) .workspace-ribbon.mod-left,
+body:not(.slim-bars) .workspace-ribbon.mod-left:before {
+    height: 32px;
+    border-bottom: 0;
+}
+
+body:not(.slim-bars) .sidebar-toggle-button,
+body:not(.slim-bars) .sidebar-toggle-button:hover {
+    padding: 0 auto;
+    height: 32px;
 }
 
 /* dim tabs */
@@ -6944,6 +7328,11 @@ body:not(.is-phone).is-focused .view-header:hover .view-header-title {
     --tab-stacked-header-width: 24px;
 }
 
+/* normalize folder col */
+.mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+    color: var(--icon-color);
+}
+
 .theme-light .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner-icon {
     content: var(--grabnote-icon);
 }
@@ -6981,6 +7370,10 @@ Menu icon colors - Context menu
     color: inherit;
 }
 
+.is-mobile .menu.mod-tab-list .menu-item:first-child .menu-item-title {
+    font-weight: bold;
+}
+
 /* trash icon */
 .theme-light .menu-item.is-warning:hover,
 .theme-light .menu-item.is-warning.selected,
@@ -7002,6 +7395,13 @@ Menu icon colors - Context menu
 /*----------------------------------------------------------------
 TABLET - basic support
 ----------------------------------------------------------------*/
+
+.is-tablet .view-header-title,
+.is-tablet .view-actions {
+    top: 1em;
+    position: relative;
+}
+
 /* todo */
 .is-tablet .view-action {
     padding-top: 1.4em;
@@ -7015,6 +7415,12 @@ TABLET - basic support
 
 .is-tablet .sidebar-toggle-button.mod-right {
     background-color: transparent;
+}
+
+/* test */
+.is-tablet .sidebar-toggle-button.mod-left {
+    top: 5px;
+    position: relative;
 }
 
 .is-tablet .workspace-drawer-active-tab-icon,
@@ -7294,12 +7700,16 @@ body:not(.is-phone) .setting-item-control input[type='text'] {
     border: 1px solid lightgray;
 }
 
-.is-phone .plugin-list-plugins :is(.setting-item.mod-toggle .setting-item-control),
-.is-phone .installed-plugins-container :is(.setting-item-control) {
+/* plugins options */
+.is-phone .plugin-list-plugins :is(.setting-item.mod-toggle .setting-item-control) {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 12px !important;
+}
+
+.is-phone .installed-plugins-container .setting-item-description {
+    font-size: var(--font-ui-smaller);
 }
 
 .is-phone .menu {
@@ -7326,8 +7736,8 @@ body:not(.is-phone) .setting-item-control input[type='text'] {
     background-color: var(--background-modifier-hover);
 }
 
-.is-tablet.theme-dark .community-item,
-.is-tablet.theme-dark .vertical-tab-content {
+.is-mobile.theme-dark .community-item,
+.is-mobile.theme-dark .vertical-tab-content {
     background: var(--background-primary);
 }
 
@@ -7497,7 +7907,7 @@ body:not(.is-phone) .document-search button.document-search-button:nth-child(2):
 body:not(.is-phone) .document-search button.document-search-button:nth-child(3)::after,
 body:not(.is-phone) .document-replace button.document-search-button:first-child::after,
 body:not(.is-phone) .document-replace button.document-search-button:nth-child(2)::after {
-    margin-top: -24px;
+    margin-top: -20px;
 }
 
 .is-phone .document-search button.document-search-button:first-child::after {
@@ -7664,14 +8074,24 @@ body.is-focused .workspace-tabs.mod-top {
 
 .workspace .mod-root .workspace-tab-header {
     width: 0;
-    min-width: 130px;
-    max-width: 200px;
+    min-width: var(--max-width-tabs);
+    max-width: calc(var(--max-width-tabs) + 80px);
 }
 
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header {
     min-width: initial;
 }
 
+.workspace-tab-header-container {
+    border-bottom: 0;
+}
+
+.workspace-tab-header.is-active,
+.workspace-split.mod-root .workspace-tab-header.is-active::before,
+.workspace-split.mod-root .workspace-tab-header.is-active::after {
+    /* box-shadow: 0 0 0 var(--tab-outline-width) var(--tab-outline-color); */
+    box-shadow: none;
+}
 
 /*----------------------------------------------------------------
 Custom Checkboxes - mini admonitions
@@ -8253,6 +8673,7 @@ SLIDESHOW
 .reveal.center .slides section {
     overflow: scroll;
     padding-bottom: 12%;
+    padding-top: 6%;
 }
 
 /* bigger section */
@@ -8590,9 +9011,10 @@ body:is(.is-phone) .reveal code.language-fnote.is-loaded {
 
 /* respect line break */
 .reveal p {
-    padding: 22px 0;
+    padding-top: 22px;
+    padding-left: 0;
+    padding-right: 0;
 }
-
 
 .reveal .callout[data-callout="font-l"] p {
     font-size: xxx-large;
@@ -8602,42 +9024,64 @@ body:is(.is-phone) .reveal code.language-fnote.is-loaded {
     font-size: x-large;
 }
 
-.reveal a[href^="#font-l"]+mark,
-.reveal a[href^="#hlcol-l"]+mark,
-.reveal a[href^="#red-l"]+mark,
-.reveal a[href^="#green-l"]+mark,
-.reveal a[href^="#blue-l"]+mark {
+.reveal a[href="#rot-g"]+mark,
+.reveal a[href="#grün-g"]+mark,
+.reveal a[href="#blau-g"]+mark,
+.reveal a[href="#font-l"]+mark,
+.reveal a[href="#hlcol-l"]+mark,
+.reveal a[href="#red-l"]+mark,
+.reveal a[href="#green-l"]+mark,
+.reveal a[href="#blue-l"]+mark {
     font-size: xxx-large;
 }
 
-.reveal a[href^="#font-s"]+mark,
-.reveal a[href^="#hlcol-s"]+mark,
-.reveal a[href^="#red-s"]+mark,
-.reveal a[href^="#green-s"]+mark,
-.reveal a[href^="#blue-s"]+mark {
+.reveal a[href="#font-s"]+mark,
+.reveal a[href="#rot-k"]+mark,
+.reveal a[href="#grün-k"]+mark,
+.reveal a[href="#blau-k"]+mark,
+.reveal a[href="#hlcol-s"]+mark,
+.reveal a[href="#red-s"]+mark,
+.reveal a[href="#green-s"]+mark,
+.reveal a[href="#blue-s"]+mark {
     font-size: x-large;
 }
 
-.reveal a[href^="#hlcol-l"]+strong,
-.reveal a[href^="#hlcol-l"]+em,
-.reveal a[href^="#red-l"]+strong,
-.reveal a[href^="#green-l"]+strong,
-.reveal a[href^="#blue-l"]+strong,
-.reveal a[href^="#red-l"]+em,
-.reveal a[href^="#green-l"]+em,
-.reveal a[href^="#blue-l"]+em {
+.reveal a[href="#hlcol-l"]+strong,
+.reveal a[href="#hlcol-l"]+em,
+.reveal a[href="#red-l"]+strong,
+.reveal a[href="#green-l"]+strong,
+.reveal a[href="#blue-l"]+strong,
+.reveal a[href="#red-l"]+em,
+.reveal a[href="#green-l"]+em,
+.reveal a[href="#blue-l"]+em,
+.reveal a[href="#rot-g"]+strong,
+.reveal a[href="#grün-g"]+strong,
+.reveal a[href="#blau-g"]+strong,
+.reveal a[href="#rot-g"]+em,
+.reveal a[href="#grün-g"]+em,
+.reveal a[href="#blau-g"]+em {
     font-size: xxx-large;
 }
 
-.reveal a[href^="#hlcol-s"]+strong,
-.reveal a[href^="#hlcol-s"]+em,
-.reveal a[href^="#red-s"]+strong,
-.reveal a[href^="#green-s"]+strong,
-.reveal a[href^="#blue-s"]+strong,
-.reveal a[href^="#red-s"]+em,
-.reveal a[href^="#green-s"]+em,
-.reveal a[href^="#blue-s"]+em {
+.reveal a[href="#hlcol-s"]+strong,
+.reveal a[href="#hlcol-s"]+em,
+.reveal a[href="#red-s"]+strong,
+.reveal a[href="#green-s"]+strong,
+.reveal a[href="#blue-s"]+strong,
+.reveal a[href="#red-s"]+em,
+.reveal a[href="#green-s"]+em,
+.reveal a[href="#blue-s"]+em,
+.reveal a[href="#rot-k"]+strong,
+.reveal a[href="#grün-k"]+strong,
+.reveal a[href="#blau-k"]+strong,
+.reveal a[href="#rot-k"]+em,
+.reveal a[href="#grün-k"]+em,
+.reveal a[href="#blau-k"]+em {
     font-size: x-large;
+}
+
+.reveal a[href="#initiale-t"]+mark {
+    margin-top: -12px;
 }
 
 .reveal .image-embed[src*="#cap"]::after {
@@ -8706,41 +9150,41 @@ body:is(.is-phone) .reveal code.language-fnote.is-loaded {
     font-size: smaller;
 }
 
-.slides-s .reveal a[href^="#font-l"]+mark,
-.slides-s .reveal a[href^="#hlcol-l"]+mark,
-.slides-s .reveal a[href^="#red-l"]+mark,
-.slides-s .reveal a[href^="#green-l"]+mark,
-.slides-s .reveal a[href^="#blue-l"]+mark {
+.slides-s .reveal a[href="#font-l"]+mark,
+.slides-s .reveal a[href="#hlcol-l"]+mark,
+.slides-s .reveal a[href="#red-l"]+mark,
+.slides-s .reveal a[href="#green-l"]+mark,
+.slides-s .reveal a[href="#blue-l"]+mark {
     font-size: larger;
 }
 
-.slides-s .reveal a[href^="#font-s"]+mark,
-.slides-s .reveal a[href^="#hlcol-s"]+mark,
-.slides-s .reveal a[href^="#red-s"]+mark,
-.slides-s .reveal a[href^="#green-s"]+mark,
-.slides-s .reveal a[href^="#blue-s"]+mark {
+.slides-s .reveal a[href="#font-s"]+mark,
+.slides-s .reveal a[href="#hlcol-s"]+mark,
+.slides-s .reveal a[href="#red-s"]+mark,
+.slides-s .reveal a[href="#green-s"]+mark,
+.slides-s .reveal a[href="#blue-s"]+mark {
     font-size: smaller;
 }
 
-.slides-s .reveal a[href^="#hlcol-l"]+strong,
-.slides-s .reveal a[href^="#hlcol-l"]+em,
-.slides-s .reveal a[href^="#red-l"]+strong,
-.slides-s .reveal a[href^="#green-l"]+strong,
-.slides-s .reveal a[href^="#blue-l"]+strong,
-.slides-s .reveal a[href^="#red-l"]+em,
-.slides-s .reveal a[href^="#green-l"]+em,
-.slides-s .reveal a[href^="#blue-l"]+em {
+.slides-s .reveal a[href="#hlcol-l"]+strong,
+.slides-s .reveal a[href="#hlcol-l"]+em,
+.slides-s .reveal a[href="#red-l"]+strong,
+.slides-s .reveal a[href="#green-l"]+strong,
+.slides-s .reveal a[href="#blue-l"]+strong,
+.slides-s .reveal a[href="#red-l"]+em,
+.slides-s .reveal a[href="#green-l"]+em,
+.slides-s .reveal a[href="#blue-l"]+em {
     font-size: larger;
 }
 
-.slides-s .reveal a[href^="#hlcol-s"]+strong,
-.slides-s .reveal a[href^="#hlcol-s"]+em,
-.slides-s .reveal a[href^="#red-s"]+strong,
-.slides-s .reveal a[href^="#green-s"]+strong,
-.slides-s .reveal a[href^="#blue-s"]+strong,
-.slides-s .reveal a[href^="#red-s"]+em,
-.slides-s .reveal a[href^="#green-s"]+em,
-.slides-s .reveal a[href^="#blue-s"]+em {
+.slides-s .reveal a[href="#hlcol-s"]+strong,
+.slides-s .reveal a[href="#hlcol-s"]+em,
+.slides-s .reveal a[href="#red-s"]+strong,
+.slides-s .reveal a[href="#green-s"]+strong,
+.slides-s .reveal a[href="#blue-s"]+strong,
+.slides-s .reveal a[href="#red-s"]+em,
+.slides-s .reveal a[href="#green-s"]+em,
+.slides-s .reveal a[href="#blue-s"]+em {
     font-size: smaller;
 }
 
@@ -8775,7 +9219,8 @@ body:not(.recipes) .theme-dark ol {
     background: rgb(126 117 102 / 30%);
 }
 
-body:not(.show-ls-marker) ol li::marker {
+body:not(.show-ls-marker) ol li::marker,
+body:not(.show-ls-marker) :is(.is-phone) ol li::marker {
     list-style-type: decimal;
     content: counter(list-item) ") ";
     display: list-item;
@@ -8794,6 +9239,8 @@ body:not(.show-ls-marker) ol li::marker {
 
 .reveal a.tag {
     font-size: inherit;
+    display: inline-flex;
+    margin-bottom: 6px;
 }
 
 .reveal .callout[data-callout="read-more"] .callout-title,
@@ -8966,8 +9413,7 @@ PDF EXPORT
     code,
     blockquote,
     table,
-    pre,
-    hr {
+    pre {
         page-break-inside: avoid;
     }
 
@@ -8987,6 +9433,12 @@ PDF EXPORT
     code {
         text-rendering: optimizeLegibility;
     }
+
+
+    a.internal-link {
+        text-decoration: none !important;
+    }
+
 
     .table-y thead tr>th,
     .table-xy thead tr>th,
@@ -9109,17 +9561,13 @@ PDF EXPORT
         padding-bottom: 0;
     }
 
-    body:is(.prg-break) div.callout[data-callout="dropcap"].callout .callout-content {
-        padding-top: 1em;
+    div.callout[data-callout="dropcap"].callout .callout-content {
+        padding-top: 0.5em;
+        margin-bottom: 1.4em;
     }
 
     body:is(.prg-break) div.callout[data-callout="raisecap"].callout .callout-content {
         padding-top: 2em;
-    }
-
-    div.callout[data-callout="dropcap"].callout .callout-content {
-        padding-top: 1em;
-        margin-bottom: 1.4em;
     }
 
     div.callout[data-callout="font-l"].callout .callout-content {
@@ -9148,6 +9596,17 @@ PDF EXPORT
         overflow-wrap: normal;
         width: fit-content;
         min-width: var(--min-boxwidth);
+    }
+
+    .is-phone .image-embed[src*="#cap"]::after {
+        min-width: calc(var(--min-boxwidth) + 2em);
+    }
+
+    a[href="#initiale"]+mark,
+    a[href="#raisecap"]+mark,
+    a[href="#initiale-t"]+mark,
+    a[href="#dropcap"]+mark {
+        color: var(--drop-cap-col) !important;
     }
 
     ul>li,
@@ -9182,28 +9641,6 @@ PDF EXPORT
         page-break-inside: avoid;
     }
 
-    .mermaid .edgeLabel {
-        color: black !important;
-    }
-
-    .mermaid rect.basic.label-container,
-    .mermaid .node path,
-    .mermaid .node polygon {
-        fill: lightgray !important;
-    }
-
-    .mermaid .node circle {
-        fill: #9f9f9f !important;
-    }
-
-    .mermaid .node rect {
-        fill: #bbbbbb !important;
-    }
-
-    .mermaid .cluster rect {
-        fill: rgb(86 86 86 / 20%) !important;
-    }
-
     .markdown-rendered code {
         background: #7e756629;
         color: black;
@@ -9212,10 +9649,6 @@ PDF EXPORT
     .file-embed.mod-generic,
     .file-embed.mod-empty {
         background: lightgray;
-    }
-
-    .mermaid span.edgeLabel {
-        background: white !important;
     }
 
     .app-container pre.language-fnote,
@@ -9263,14 +9696,19 @@ PDF EXPORT
     h6 {
         font-weight: 600;
         page-break-after: avoid;
+        text-rendering: optimizeLegibility;
     }
 
-    div hr {
+    /* body:not(.page-break) hr {
         page-break-after: always !important;
+    } */
+
+    .hide-hr hr {
+        visibility: hidden;
     }
 
-    div[class^="wave"] hr,
     div[class^="fade"] hr,
+    div[class^="wave"] hr,
     div[class="stars"] hr {
         page-break-inside: avoid;
     }
@@ -9349,15 +9787,53 @@ PDF EXPORT
         color: white !important;
     }
 
-    @page {
-        counter-increment: page !important;
-        font-family: Helvetica, Arial, sans-serif;
-        font-size: 12pt;
-        padding-bottom: 3em;
+
+    /* 
+1= standard
+2= no counter + pagebreak
+3= btm counter + pagebreak
+4= top counter + pagebreak
+*/
+
+    body {
+        counter-reset: page;
     }
 
-    #pageNumber {
+    .pdf-counter-2 hr,
+    .pdf-counter-4 hr {
+        counter-increment: page;
+        page-break-before: always;
+    }
+
+    /* btm */
+    .pdf-counter-3 hr {
+        counter-increment: page;
+        page-break-after: always;
+    }
+
+    body:is(.pdf-counter-3, .pdf-counter-4) hr::after {
+        font-size: small;
+        color: gray;
+        visibility: visible;
         content: counter(page);
+    }
+
+    /* btm  */
+    .pdf-counter-3 hr::after:nth-last-child(1) {
+        position: absolute;
+        left: 45%;
+        bottom: 1px;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    /* top  */
+    .pdf-counter-4 hr::after {
+        display: flex;
+        justify-content: center;
+        position: relative;
     }
 
     ::-webkit-scrollbar {
@@ -9369,6 +9845,11 @@ PDF EXPORT
 /*----------------------------------------------------------------
 PLUGINS
 ----------------------------------------------------------------*/
+/* commander */
+.is-phone .cmdr-setting-modal>.modal {
+    height: revert;
+    width: revert;
+}
 
 /* kanban tags */
 .kanban-plugin__item-tags:not(:empty) {
@@ -9679,46 +10160,14 @@ body:not(.show-ui-btns) .advanced-tables-buttons>.nav-header>.nav-buttons-contai
     background-color: dodgerblue;
 }
 
-/* mermaid tools */
-.theme-dark .mermaid-toolbar-elements-container {
-    background: rgb(255 255 255 / 20%);
-    border-radius: 4px;
-    filter: saturate(1);
+
+/* dice roller */
+.dice-roller.no-icon {
+    display: contents;
 }
 
-.theme-dark .mermaid-toolbar-elements-container :is(rect.outer, rect.inner, .cluster rect, .statediagram-state rect.divider) {
-    fill: rgb(255 255 255 / 10%) !important;
-}
-
-.theme-dark .mermaid-toolbar-elements-container path.er.relationshipLine {
-    filter: contrast(0.2) brightness(3);
-}
-
-/* text.messageText */
-.theme-dark .mermaid-toolbar-elements-container :is(text.slice, text.tag-label, tspan.row) {
-    filter: invert(1) drop-shadow(2px 4px 6px gray);
-}
-
-/* arrows, lines */
-.theme-dark .mermaid-toolbar-elements-container :is(.relation, .edge-pattern-solid, line) {
-    filter: contrast(0.1) invert(1) brightness(2.5);
-}
-
-.theme-dark .mermaid-toolbar-elements-container rect.er.attributeBoxOdd {
-    fill: gray !important;
-}
-
-.theme-dark .mermaid-toolbar-elements-container rect.er.attributeBoxEven {
-    fill: black !important;
-}
-
-.theme-dark .mermaid-toolbar-elements-container rect.req.reqBox {
-    fill: var(--background-primary-alt) !important;
-}
-
-#mermaid-toolbar-element-UserJourneyDiagram-0 .label,
-#mermaid-toolbar-element-UserJourneyDiagram-1 .label {
-    color: black !important;
+.dice-roller.has-embed .internal-embed {
+    padding: 0;
 }
 
 /*----------------------------------------------------------------
