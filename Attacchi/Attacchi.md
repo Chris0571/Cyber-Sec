@@ -14,8 +14,6 @@ Esistono vari tipi di attacchi che mirano ad obiettivi diversi:
 	avvelenare una richiesta ARP per modificare il MAC dato alla rete ed inserirsi in una connessione spacciandosi per qualcun altro
 - #DNS-Poisoning
 	compromettere un DNS per reindirizzare il traffico
-- #Domain-Hijacking
-	
 - #Clickjacking
 	ingannare l'utente a cliccare su un link malevolo
 - #Session-Hijacking

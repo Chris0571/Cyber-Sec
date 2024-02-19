@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "Attacchi/Attacchi.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -177,11 +177,12 @@
   },
   "active": "0ebe2d215de26f20",
   "lastOpenFiles": [
-    "Attacchi/Denial of Service.md",
+    "Python/Venv.md",
     "Linux/bash commands.md",
+    "Attacchi/Attacchi.md",
+    "Attacchi/Denial of Service.md",
     "Criptografia/3DES.md",
     "Attacchi/Man in the Browser.md",
-    "Attacchi/Attacchi.md",
     "Hypervisor.md",
     "My Code File.py",
     "Location added on 2024-02-19T11-49.md",
@@ -198,7 +199,6 @@
     "SOC/Antivirus.md",
     "Protocolli/3 Way Handshake.md",
     "Protocolli/CLDAP.md",
-    "Python/Venv.md",
     "SOC/diamond-model.pdf",
     "Untitled",
     "Python",
