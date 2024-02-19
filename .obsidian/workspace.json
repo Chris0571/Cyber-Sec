@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux/bash commands.md",
+                "file": "Attacchi/Attacchi.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Linux/bash commands.md",
+                "file": "Attacchi/Attacchi.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Linux/bash commands.md",
+                "file": "Attacchi/Attacchi.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Linux/bash commands.md"
+                "file": "Attacchi/Attacchi.md"
               }
             }
           },
@@ -177,6 +177,8 @@
   },
   "active": "0ebe2d215de26f20",
   "lastOpenFiles": [
+    "Attacchi/Denial of Service.md",
+    "Linux/bash commands.md",
     "Criptografia/3DES.md",
     "Attacchi/Man in the Browser.md",
     "Attacchi/Attacchi.md",
@@ -184,7 +186,6 @@
     "My Code File.py",
     "Location added on 2024-02-19T11-49.md",
     "Attacchi/Vulnerabilità.md",
-    "Attacchi/Denial of Service.md",
     "Linux/UNIX.md",
     "Reti/Firewall.md",
     "Reti/Livelli OSI.md",
@@ -196,7 +197,6 @@
     "SOC/Digital Forensic.md",
     "SOC/Antivirus.md",
     "Protocolli/3 Way Handshake.md",
-    "Linux/bash commands.md",
     "Protocolli/CLDAP.md",
     "Python/Venv.md",
     "SOC/diamond-model.pdf",
