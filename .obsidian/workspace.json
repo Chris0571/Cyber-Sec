@@ -11,9 +11,11 @@
             "id": "0ebe2d215de26f20",
             "type": "leaf",
             "state": {
-              "type": "code-editor",
+              "type": "markdown",
               "state": {
-                "file": "My Code File.py"
+                "file": "Linux/bash commands.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -91,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "My Code File.py",
+                "file": "Linux/bash commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "My Code File.py",
+                "file": "Linux/bash commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "My Code File.py"
+                "file": "Linux/bash commands.md"
               }
             }
           },
@@ -170,16 +172,17 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-map-view:Open map view": false,
-      "code-files:Create Code File": false
+      "obsidian-map-view:Open map view": false
     }
   },
   "active": "0ebe2d215de26f20",
   "lastOpenFiles": [
+    "Criptografia/3DES.md",
+    "Attacchi/Man in the Browser.md",
+    "Attacchi/Attacchi.md",
     "Hypervisor.md",
     "My Code File.py",
     "Location added on 2024-02-19T11-49.md",
-    "Attacchi/Attacchi.md",
     "Attacchi/Vulnerabilità.md",
     "Attacchi/Denial of Service.md",
     "Linux/UNIX.md",
@@ -187,7 +190,6 @@
     "Reti/Livelli OSI.md",
     "Untitled.canvas",
     "Attacchi/Man in the Middle.md",
-    "Attacchi/Man in the Browser.md",
     "Attacchi/Malware.md",
     "SOC/Incident Response.md",
     "SOC/Honeypots.md",
