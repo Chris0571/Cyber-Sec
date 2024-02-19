@@ -1,8 +1,9 @@
 I **_DoS_** o _**Distributed DoS**_ sono attacchi che rendono risorse o servizi inaccessibili.
 L'attacco è _volumetrico_, ovvero quantitativo, spesso eseguito tramite botnet
-ad un dispositivo/rete viene inviato più traffico di quanto possa trasmettere:
-- perde pacchetti
-- degrado performance
+ad un dispositivo/rete viene inviato più traffico di quanto possa ricevere,
+conseguenze:
+- perdita di pacchetti
+- degrado della performance
 - interruzione della rete
 
 Attacchi di tipo *__BPS__* e *__PPS__*

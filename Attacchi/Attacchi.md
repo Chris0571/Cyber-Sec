@@ -11,7 +11,7 @@ Esistono vari tipi di attacchi che mirano ad obiettivi diversi:
 - #Privilege-Escalation
 	quando un attaccante tenta di garantirsi l'accesso ad utenti/host con più privilegi
 - #ARP-Poisoning
-	avvelenare una richiesta ARP per modificare il MAC dato alla rete ed inserirsi in una connessione spacciandosi per qualcun'altro
+	avvelenare una richiesta ARP per modificare il MAC dato alla rete ed inserirsi in una connessione spacciandosi per qualcun altro
 - #DNS-Poisoning
 	compromettere un DNS per reindirizzare il traffico
 - #Domain-Hijacking
@@ -19,13 +19,13 @@ Esistono vari tipi di attacchi che mirano ad obiettivi diversi:
 - #Clickjacking
 	ingannare l'utente a cliccare su un link malevolo
 - #Session-Hijacking
-	rubare un cookie e facendo scollegare il client prendere il suo posto
+	rubare un cookie e far scollegare il client per prendere il suo posto
 - #URL-Hijacking
-	molto utilizzato nei phishing, prendere un dominio con un errore ortografico o molto simile ad un'altro già esistente
+	molto utilizzato nei phishing, prendere un dominio con un errore ortografico o molto simile ad un altro già esistente
 - #MAC-Spoofing 
-	è un sistema dove si impersonifica un'altro MAC per garantirsi l'accesso 
+	è un sistema dove si impersonifica un altro MAC per garantirsi l'accesso 
 - #IP-Spoofing
-	fingersi qualcun'altro utilizzando il suo IP
+	fingersi qualcun altro utilizzando il suo IP
 - #Downgrade
 
 
