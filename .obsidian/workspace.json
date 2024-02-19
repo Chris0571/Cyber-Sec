@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux/UNIX.md",
+                "file": "Attacchi/Attacchi.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Linux/UNIX.md",
+                "file": "Attacchi/Attacchi.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Linux/UNIX.md",
+                "file": "Attacchi/Attacchi.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Linux/UNIX.md"
+                "file": "Attacchi/Attacchi.md"
               }
             }
           },
@@ -175,8 +175,9 @@
       "obsidian-map-view:Open map view": false
     }
   },
-  "active": "244438b15b82e96d",
+  "active": "74126d5439c32a1b",
   "lastOpenFiles": [
+    "Linux/UNIX.md",
     "Reti/Firewall.md",
     "Reti/Livelli OSI.md",
     "Attacchi/Attacchi.md",
@@ -193,7 +194,6 @@
     "Linux/bash commands.md",
     "Attacchi/Denial of Service.md",
     "Protocolli/CLDAP.md",
-    "Linux/UNIX.md",
     "Python/Venv.md",
     "SOC/diamond-model.pdf",
     "Untitled",
