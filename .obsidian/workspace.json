@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Attacchi/Denial of Service.md",
+                "file": "Linux/UNIX.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Attacchi/Denial of Service.md",
+                "file": "Linux/UNIX.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Attacchi/Denial of Service.md",
+                "file": "Linux/UNIX.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Attacchi/Denial of Service.md"
+                "file": "Linux/UNIX.md"
               }
             }
           },
@@ -141,8 +141,12 @@
             "id": "303e48ba32203119",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Reti/Livelli OSI.md",
+                "mode": "source",
+                "source": false
+              }
             }
           },
           {
@@ -153,8 +157,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -172,21 +175,30 @@
       "obsidian-map-view:Open map view": false
     }
   },
-  "active": "74126d5439c32a1b",
+  "active": "244438b15b82e96d",
   "lastOpenFiles": [
+    "Reti/Firewall.md",
+    "Reti/Livelli OSI.md",
     "Attacchi/Attacchi.md",
+    "Untitled.canvas",
+    "Attacchi/Vulnerabilità.md",
+    "Attacchi/Man in the Middle.md",
+    "Attacchi/Man in the Browser.md",
+    "Attacchi/Malware.md",
+    "SOC/Incident Response.md",
+    "SOC/Honeypots.md",
+    "SOC/Digital Forensic.md",
+    "SOC/Antivirus.md",
+    "Protocolli/3 Way Handshake.md",
+    "Linux/bash commands.md",
     "Attacchi/Denial of Service.md",
     "Protocolli/CLDAP.md",
     "Linux/UNIX.md",
-    "Linux/bash commands.md",
     "Python/Venv.md",
     "SOC/diamond-model.pdf",
-    "Reti/Livelli OSI.md",
     "Untitled",
     "Python",
     "Sentinet3",
-    "Attacchi/Man in the Browser.md",
-    "Attacchi/Man in the Middle.md",
     "Reti/Routing.md",
     "Reti/IDS.md",
     "Reti/IPS.md",
@@ -195,14 +207,6 @@
     "Protocolli/SNMP.md",
     "Protocolli/TCP.md",
     "Reti/VPN.md",
-    "Reti/Switch.md",
-    "Reti/Subnetting.md",
-    "Reti/Porte.md",
-    "Reti/MAC.md",
-    "Reti/Firewall.md",
-    "Reti/DNS.md",
-    "Protocolli/SSH.md",
-    "Protocolli/UDP.md",
-    "Protocolli/NTP.md"
+    "Reti/Switch.md"
   ]
 }
