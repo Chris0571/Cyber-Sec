@@ -83,7 +83,7 @@
   ],
   "mapControls": {
     "filtersDisplayed": false,
-    "viewDisplayed": true,
+    "viewDisplayed": false,
     "presetsDisplayed": false
   },
   "maxClusterRadiusPixels": 20,
@@ -96,15 +96,18 @@
       "preset": true
     }
   ],
-  "chosenMapMode": "auto",
+  "chosenMapMode": "dark",
   "saveHistory": true,
   "letZoomBeyondMax": false,
   "queryForFollowActiveNote": "path:\"$PATH$\"",
   "supportRealTimeGeolocation": false,
   "fixFrontMatterOnPaste": true,
   "geoHelperType": "auto",
-  "geoHelperFilePath": "",
+  "geoHelperCommand": "chrome",
+  "geoHelperUrl": "https://esm7.github.io/obsidian-geo-helper/",
   "handleGeolinksInNotes": true,
   "showGeolinkPreview": false,
-  "zoomOnGeolinkPreview": 10
+  "zoomOnGeolinkPreview": 10,
+  "routingUrl": "https://www.google.com/maps/dir/?api=1&origin={x0},{y0}&destination={x1},{y1}",
+  "geoHelperFilePath": ""
 }

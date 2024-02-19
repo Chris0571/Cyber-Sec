@@ -27,6 +27,6 @@ Esistono vari tipi di attacchi che mirano ad obiettivi diversi:
 - #IP-Spoofing
 	fingersi qualcun altro utilizzando il suo IP
 - #Downgrade
-
+	portare un determinato software ad una versione con delle vulnerabilità specifiche
 
  
