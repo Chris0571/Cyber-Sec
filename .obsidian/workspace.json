@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Python/Venv.md",
-                "mode": "source",
+                "file": "Attacchi/Denial of Service.md",
+                "mode": "preview",
                 "source": false
               }
             }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#IoT",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,7 +73,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Python/Venv.md",
+                "file": "Attacchi/Denial of Service.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Python/Venv.md",
+                "file": "Attacchi/Denial of Service.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Python/Venv.md"
+                "file": "Attacchi/Denial of Service.md"
               }
             }
           },
@@ -174,6 +175,10 @@
   },
   "active": "74126d5439c32a1b",
   "lastOpenFiles": [
+    "Protocolli/CLDAP.md",
+    "Attacchi/Denial of Service.md",
+    "Linux/UNIX.md",
+    "Linux/bash commands.md",
     "Python/Venv.md",
     "SOC/diamond-model.pdf",
     "Reti/Livelli OSI.md",
@@ -183,7 +188,6 @@
     "Sentinet3",
     "Attacchi/Man in the Browser.md",
     "Attacchi/Man in the Middle.md",
-    "Attacchi/Denial of Service.md",
     "Reti/Routing.md",
     "Reti/IDS.md",
     "Reti/IPS.md",
@@ -200,9 +204,6 @@
     "Reti/DNS.md",
     "Protocolli/SSH.md",
     "Protocolli/UDP.md",
-    "Protocolli/NTP.md",
-    "Protocolli/IP.md",
-    "Protocolli/HTTPs.md",
-    "Protocolli/DHCP.md"
+    "Protocolli/NTP.md"
   ]
 }
