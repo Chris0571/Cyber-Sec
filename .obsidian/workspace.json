@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "30b0d84ba3727c2a",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.3"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -175,7 +186,7 @@
       "obsidian-map-view:Open map view": false
     }
   },
-  "active": "0ebe2d215de26f20",
+  "active": "30b0d84ba3727c2a",
   "lastOpenFiles": [
     "Python/Venv.md",
     "Linux/bash commands.md",
