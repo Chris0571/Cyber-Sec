@@ -13,24 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Attacchi/Attacchi.md",
-                "mode": "preview",
+                "file": "Linux/Passwords.md",
+                "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "30b0d84ba3727c2a",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.5.3"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -83,6 +72,14 @@
               "type": "tagfolder-view",
               "state": {}
             }
+          },
+          {
+            "id": "285cc6f45b3f105b",
+            "type": "leaf",
+            "state": {
+              "type": "surfing-tab-tree",
+              "state": {}
+            }
           }
         ]
       }
@@ -104,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Attacchi/Attacchi.md",
+                "file": "Linux/Passwords.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Attacchi/Attacchi.md",
+                "file": "Linux/Passwords.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Attacchi/Attacchi.md"
+                "file": "Linux/Passwords.md"
               }
             }
           },
@@ -186,12 +183,13 @@
       "obsidian-map-view:Open map view": false
     }
   },
-  "active": "30b0d84ba3727c2a",
+  "active": "0ebe2d215de26f20",
   "lastOpenFiles": [
+    "Attacchi/Denial of Service.md",
+    "Linux/Passwords.md",
+    "Attacchi/Attacchi.md",
     "Python/Venv.md",
     "Linux/bash commands.md",
-    "Attacchi/Attacchi.md",
-    "Attacchi/Denial of Service.md",
     "Criptografia/3DES.md",
     "Attacchi/Man in the Browser.md",
     "Hypervisor.md",
@@ -218,7 +216,6 @@
     "Reti/IDS.md",
     "Reti/IPS.md",
     "Protocolli/HTTP.md",
-    "Protocolli/LDAP.md",
-    "Protocolli/SNMP.md"
+    "Protocolli/LDAP.md"
   ]
 }
