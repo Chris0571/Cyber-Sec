@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux/Passwords.md",
+                "file": "Linux/bash commands.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#pwquality",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -81,8 +81,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -102,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Linux/Passwords.md",
+                "file": "Linux/bash commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Linux/Passwords.md",
+                "file": "Linux/bash commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Linux/Passwords.md"
+                "file": "Linux/bash commands.md"
               }
             }
           },
@@ -186,8 +185,8 @@
   },
   "active": "0ebe2d215de26f20",
   "lastOpenFiles": [
-    "Attacchi/Denial of Service.md",
     "Linux/Passwords.md",
+    "Attacchi/Denial of Service.md",
     "Attacchi/Attacchi.md",
     "Python/Venv.md",
     "Linux/bash commands.md",
